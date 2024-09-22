@@ -14,7 +14,7 @@ class LogoutForm extends Component
         Session::invalidate();
         Session::regenerateToken();
 
-        return $this->redirect('/', navigate: false);
+        return $this->redirect(route('login'), navigate: true);
     }
 
     public function render()

@@ -35,7 +35,7 @@ class LoginForm extends Component
         $this->validate();
         $this->authenticate();
         Session::regenerate();
-        return $this->redirect(route('home'), navigate: false);
+        return $this->redirect(route('home'), navigate: true);
     }
 
     public function render()

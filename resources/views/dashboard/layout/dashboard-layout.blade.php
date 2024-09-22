@@ -43,8 +43,6 @@
     </body>
 
     <!--start Scripts-->
-    @livewireScripts
     @include('dashboard.layout.sections._scripts')
     <!--end Scripts-->
-
 </html>

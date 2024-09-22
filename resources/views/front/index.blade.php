@@ -76,7 +76,7 @@
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
                                     <a href="room-details.html">
-                                        <img src="assets/img/room/room-style-img1.jpg" alt="Images">
+                                        <img src="{{ asset('front_assets/img/room/room-style-img1.jpg') }}" alt="Images">
                                     </a>
                                 </div>
                             </div>
@@ -120,7 +120,7 @@
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
                                     <a href="room-details.html">
-                                        <img src="assets/img/room/room-style-img2.jpg" alt="Images">
+                                        <img src="{{ asset('front_assets/img/room/room-style-img2.jpg') }}" alt="Images">
                                     </a>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
                                     <a href="room-details.html">
-                                        <img src="assets/img/room/room-style-img3.jpg" alt="Images">
+                                        <img src="{{ asset('front_assets/img/room/room-style-img3.jpg') }}" alt="Images">
                                     </a>
                                 </div>
                             </div>
@@ -208,7 +208,7 @@
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
                                     <a href="room-details.html">
-                                        <img src="assets/img/room/room-style-img4.jpg" alt="Images">
+                                        <img src="{{ asset('front_assets/img/room/room-style-img4.jpg') }}" alt="Images">
                                     </a>
                                 </div>
                             </div>
@@ -270,7 +270,7 @@
 
                 <div class="col-lg-6">
                     <div class="book-img-2">
-                        <img src="assets/img/book-img2.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/book-img2.jpg') }}" alt="Images">
                     </div>
                 </div>
             </div>
@@ -357,7 +357,7 @@
             <div class="team-slider-two owl-carousel owl-theme pt-45">
                 <div class="team-item">
                     <a href="team.html">
-                        <img src="assets/img/team/team-img1.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/team/team-img1.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
                         <h3><a href="team.html">Tom Shumate</a></h3>
@@ -381,7 +381,7 @@
 
                 <div class="team-item">
                     <a href="team.html">
-                        <img src="assets/img/team/team-img2.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/team/team-img2.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
                         <h3><a href="team.html">Carrie Horton</a></h3>
@@ -405,7 +405,7 @@
 
                 <div class="team-item">
                     <a href="team.html">
-                        <img src="assets/img/team/team-img5.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/team/team-img5.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
                         <h3><a href="team.html">Brian Orlando</a></h3>
@@ -429,7 +429,7 @@
 
                 <div class="team-item">
                     <a href="team.html">
-                        <img src="assets/img/team/team-img4.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/team/team-img4.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
                         <h3><a href="team.html">Michael Evens</a></h3>
@@ -465,7 +465,7 @@
             <div class="row align-items-center pt-45">
                 <div class="col-lg-6 col-md-6">
                     <div class="testimonials-img-two">
-                        <img src="assets/img/testimonials/testimonials-img5.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/testimonials/testimonials-img5.jpg') }}" alt="Images">
                     </div>
                 </div>
 
@@ -482,7 +482,7 @@
                             </p>
                             <ul>
                                 <li>
-                                    <img src="assets/img/testimonials/testimonials-img1.jpg" alt="Images">
+                                    <img src="{{ asset('front_assets/img/testimonials/testimonials-img1.jpg') }}" alt="Images">
                                     <h3>Mary Marden</h3>
                                     <span>New York City</span>
                                 </li>
@@ -500,7 +500,7 @@
                             </p>
                             <ul>
                                 <li>
-                                    <img src="assets/img/testimonials/testimonials-img2.jpg" alt="Images">
+                                    <img src="{{ asset('front_assets/img/testimonials/testimonials-img2.jpg') }}" alt="Images">
                                     <h3>Harriet Johnson</h3>
                                     <span>London City</span>
                                 </li>
@@ -593,7 +593,7 @@
 
                 <div class="col-lg-6">
                     <div class="faq-img-3">
-                        <img src="assets/img/faq/faq-img3.jpg" alt="Images">
+                        <img src="{{ asset('front_assets/img/faq/faq-img3.jpg') }}" alt="Images">
                     </div>
                 </div>
             </div>
@@ -612,7 +612,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/blog-item-img1.jpg" alt="Images">
+                            <img src="{{ asset('front_assets/img/blog/blog-item-img1.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
                             <ul>
@@ -634,7 +634,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/blog-item-img2.jpg" alt="Images">
+                            <img src="{{ asset('front_assets/img/blog/blog-item-img2.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
                             <ul>
@@ -656,7 +656,7 @@
                 <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                     <div class="blog-item">
                         <a href="blog-details.html">
-                            <img src="assets/img/blog/blog-item-img3.jpg" alt="Images">
+                            <img src="{{ asset('front_assets/img/blog/blog-item-img3.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
                             <ul>

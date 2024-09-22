@@ -2,7 +2,7 @@
     <div class="services-bar-widget">
         <h3 class="title">Others Services</h3>
         <div class="side-bar-categories">
-            <img src="{{Auth::user()->image_url}}" class="rounded mx-auto d-block" alt="Image" style="width:100px; height:100px;"> <br><br>
+            <img src="{{Auth::user()?->image_url}}" class="rounded mx-auto d-block" alt="Image" style="width:100px; height:100px;"> <br><br>
 
             <ul>
 

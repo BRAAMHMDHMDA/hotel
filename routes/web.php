@@ -22,8 +22,8 @@ Route::view('home', 'front.index')->name('home');
 Route::middleware('auth:web')->group(function () {
     Route::view('/user/dashboard', 'front.user.dashboard')->name('user.dashboard');
     Route::view('/user/profile', 'front.user.profile')->name('user.profile');
-    Route::view('/user/change-password', 'front.user.change-password')->name('user.change-password');
 
 });
+Route::view('/user/change-password', 'front.user.change-password')->name('user.change-password');
 
 require __DIR__.'/auth.php';

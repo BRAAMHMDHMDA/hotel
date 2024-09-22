@@ -2,6 +2,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @livewireStyles
     <!--favicon-->
     <link rel="icon" href="{{ asset('dash_assets/images/favicon-32x32.png') }}" type="image/png" />
     <!--plugins-->
@@ -22,7 +23,6 @@
     <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('dash_assets/css/header-colors.css') }}" />
     <title>{{config('app.name')}} Dashboard - {{$title ?? ''}}</title>
-
     @stack('styles')
 
 </head>

@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-    @livewireStyles
     @include('front.layout.sections._head')
 
     <body class="antialiased">
@@ -17,16 +16,14 @@
         <!-- Start Navbar Area -->
         @include('front.layout.sections._navbar')
         <!-- End Navbar Area -->
-
-        {{$slot}}
-
+        <main>
+            {{$slot}}
+        </main>
         <!-- Footer Area -->
         @include('front.layout.sections._footer')
         <!-- Footer Area End -->
 
-        @livewireScripts
         @include('front.layout.sections._scripts')
-        @livewireScripts
 
     </body>
 

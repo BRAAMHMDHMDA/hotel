@@ -38,7 +38,7 @@
                     <div class="col-lg-6 col-md-6">
                         <x-front.form.input name="city" label="Town / City"/>
                     </div>
-                    <x-front.form.submit-btn>Save Changes</x-front.form.submit-btn>
+                    <x-front.form.submit-btn class="btn btn-danger">Save Changes</x-front.form.submit-btn>
                 </div>
             </div>
         </div>

@@ -29,7 +29,7 @@ class RegisterForm extends Component
         event(new Registered($user = User::create($validated)));
         Auth::login($user);
 
-        $this->redirect(route('home'), navigate: false);
+        $this->redirect(route('home'), navigate: true);
     }
 
     public function render()
