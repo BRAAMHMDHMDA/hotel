@@ -3,12 +3,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @livewireStyles
+{{--    @powerGridStyles--}}
     <!--favicon-->
     <link rel="icon" href="{{ asset('dash_assets/images/favicon-32x32.png') }}" type="image/png" />
     <!--plugins-->
     <link href="{{ asset('dash_assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
     <link href="{{ asset('dash_assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('dash_assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('dash_assets/plugins/notifications/css/lobibox.min.css') }}" />
     <!-- loader-->
     <link href="{{ asset('dash_assets/css/pace.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('dash_assets/js/pace.min.js') }}"></script>
@@ -22,6 +24,8 @@
     <link rel="stylesheet" href="{{ asset('dash_assets/css/dark-theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />
     <link rel="stylesheet" href="{{ asset('dash_assets/css/header-colors.css') }}" />
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <title>{{config('app.name')}} Dashboard - {{$title ?? ''}}</title>
     @stack('styles')
 

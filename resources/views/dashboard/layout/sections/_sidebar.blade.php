@@ -21,11 +21,11 @@
             </a>
         </li>
         <li>
-            <a href="{{route('dashboard.test')}}" wire:navigate>
+            <a href="{{route('dashboard.team')}}" wire:navigate>
                 <div class="parent-icon">
-                    <i class="bx bx-alarm"></i>
+                    <i class="bx bxs-user-rectangle"></i>
                 </div>
-                <div class="menu-title">Test</div>
+                <div class="menu-title">Team Management</div>
             </a>
         </li>
 

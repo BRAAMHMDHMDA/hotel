@@ -2,28 +2,41 @@
 
 namespace App\Traits;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 trait HasImage
 {
     //Begin::Image Actions
-    public static function storeImage($data, $name_image_in_data='image', $name_image_in_DB='image_path')
+    public static function storeImage($data, $width=null, $height=null, $name_image_in_data='image', $name_image_in_DB='image_path')
     {
         $image = $data[$name_image_in_data];
-        if ($image){
+
+        if ($image && is_null($width)){
             $image_path = $image->store(static::$imageFolder, static::$imageDisk);
             $data[$name_image_in_DB] = $image_path;
+        }else{
+            $image_name = hexdec(uniqid()) .'.'. $image->getClientOriginalExtension();
+            $image_path = static::$imageFolder.'/'.$image_name;
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($image)->resize($width, $height);
+            Storage::disk('media')->put($image_path, (string) $image->encode());
+            $data[$name_image_in_DB] = $image_path;
         }
+
         return $data;
     }
 
-    public static function updateImage($data, $oldImage, $name_image_in_data='image', $name_image_in_DB='image_path')
+    public static function updateImage($data, $oldImage, $width=null, $height=null, $name_image_in_data='image', $name_image_in_DB='image_path')
     {
-        $result = static::storeImage($data, $name_image_in_data, $name_image_in_DB);
-        static::deleteImage($oldImage);
-        return $result;
+        $image = $data[$name_image_in_data];
+        if ($image) {
+            $data = static::storeImage($data, $width, $height, $name_image_in_data, $name_image_in_DB);
+            static::deleteImage($oldImage);
+        }
+        return $data;
     }
 
     public static function deleteImage($old_image_url)

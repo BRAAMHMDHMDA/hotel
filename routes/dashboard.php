@@ -27,14 +27,10 @@ Route::group([
 ], function (){
 
     //=================Home Route=================
-    Route::get('/home', function () {
-        return view('dashboard.index');
-    })->name('home');
+    Route::view('home', 'dashboard.index')->name('home');
     Route::redirect('/', '/dashboard/home');
 
-    Route::get('/test', function () {
-        return view('dashboard.test');
-    })->name('test');
+    Route::view('team', 'dashboard.team.index')->name('team');
 
 });
 
