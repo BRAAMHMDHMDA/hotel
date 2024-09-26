@@ -26,11 +26,15 @@ Route::group([
     'middleware' => ['auth:admin'],
 ], function (){
 
-    //=================Home Route=================
+    //================= Home Route=================
     Route::view('home', 'dashboard.index')->name('home');
     Route::redirect('/', '/dashboard/home');
 
+    //================= Team Management Route=================
     Route::view('team', 'dashboard.team.index')->name('team');
+
+    //================= Room-Types Management Route=================
+    Route::view('room-types', 'dashboard.room-types.index')->name('room-types');
 
 });
 
