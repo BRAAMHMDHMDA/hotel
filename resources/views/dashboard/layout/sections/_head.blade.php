@@ -3,7 +3,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @livewireStyles
-{{--    @powerGridStyles--}}
     <!--favicon-->
     <link rel="icon" href="{{ asset('dash_assets/images/favicon-32x32.png') }}" type="image/png" />
     <!--plugins-->
@@ -22,11 +21,37 @@
     <link href="{{ asset('dash_assets/css/icons.css') }}" rel="stylesheet">
     <!-- Theme Style CSS -->
     <link rel="stylesheet" href="{{ asset('dash_assets/css/dark-theme.css') }}" />
-    <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />
+{{--    <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />--}}
     <link rel="stylesheet" href="{{ asset('dash_assets/css/header-colors.css') }}" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <title>{{config('app.name')}} Dashboard - {{$title ?? ''}}</title>
+    <style>
+        .facilities-input {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 0.5rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            cursor: text;
+        }
+        .facilities-input .facility {
+            background-color: #0d6efd;
+            color: white;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.25rem;
+        }
+        .facilities-input span i {
+            cursor: pointer;
+            margin-left: 0.3rem;
+        }
+        .facilities-input input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+        }
+    </style>
     @stack('styles')
 
 </head>

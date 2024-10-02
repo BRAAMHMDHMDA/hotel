@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Dashboard\RoomTypes;
 
+use App\Models\RoomTemplate;
 use App\Models\RoomType;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -20,8 +21,8 @@ class Create extends Component
     public function submit()
     {
         $data= $this->validate();
-        RoomType::create(RoomType::storeImage($data));
-
+        $roomType = RoomType::create(RoomType::storeImage($data));
+        $roomType->roomTemplate()->create();
         $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "$this->name (Room Type) Created Successfully");

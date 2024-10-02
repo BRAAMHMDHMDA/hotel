@@ -17,17 +17,17 @@
            }}
         >
             <option value="">--- Select {{ $label }} ---</option>
-            @foreach($options as $option)
-                <option value="{{ $option->id }}"
-                        wire:key="category-{{$option->id}}"
+            @foreach($options as $key => $value)
+                <option value="{{ $key }}"
+                        wire:key="category-{{$key}}"
                 >
-                    {{ $option->name }}
+                    {{ $value }}
                 </option>
             @endforeach
         </select>
         @error($name)
-        <div class="invalid-feedback">
-            {{ $message }}
-        </div>
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
         @enderror
     </div>

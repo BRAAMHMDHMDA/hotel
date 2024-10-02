@@ -29,7 +29,7 @@ document.addEventListener("notify_success", event => {
     });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     // Listen for the 'show-delete-confirmation' event
     window.addEventListener('show-delete-confirmation', function (event) {
         let confirm_modal = $('#bulk-delete-modal');
@@ -40,3 +40,4 @@ $(document).ready(function() {
         })
     });
 });
+

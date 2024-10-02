@@ -35,6 +35,10 @@ Route::group([
 
     //================= Room-Types Management Route=================
     Route::view('room-types', 'dashboard.room-types.index')->name('room-types');
+    Route::get('room-template/{id}', \App\Livewire\Dashboard\RoomTemplates\Edit::class)->name('room-template');
+
+    //================= Rooms Management Route=================
+    Route::view('rooms', 'dashboard.rooms.index')->name('rooms');
 
 });
 
