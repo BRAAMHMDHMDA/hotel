@@ -9,7 +9,7 @@
                 <li><i class='bx bx-chevron-right'></i></li>
                 <li>{{$current_page}}</li>
             </ul>
-            <h3>{{$current_page}}</h3>
+            <h4 class="text-white">{{$current_page}}</h4>
         </div>
     </div>
 </div>

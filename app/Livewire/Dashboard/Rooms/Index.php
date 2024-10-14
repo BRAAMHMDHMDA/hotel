@@ -36,16 +36,14 @@ final class Index extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return Room::with('roomTemplate.roomType:id,name');
+        return Room::with('roomType:id,name');
     }
 
     public function relationSearch(): array
     {
         return [
-            'roomTemplate' => [
-                'roomType' => [
-                    'name'
-                ],
+            'roomType' => [
+                'name'
             ],
         ];
     }
@@ -56,12 +54,10 @@ final class Index extends PowerGridComponent
             ->add('id')
             ->add('number')
             ->add('number', fn($row) => '<div class="badge bg-light text-black fw-normal fs-6">#'.$row->number.'</div>')
-
-            ->add('room_type', fn($row) => $row->roomTemplate->roomType->name)
+            ->add('room_type', fn($row) => $row->roomType->name)
             ->add('status', fn($row) => $row->status==='active'? '<div class="badge rounded-pill text-success bg-light-success p-2 text-uppercase px-3"><i class="bx bxs-circle me-1"></i>'.$row->status.'</div>': '<div class="badge rounded-pill text-warning bg-light-warning p-2 text-uppercase px-3"><i class="bx bxs-circle me-1"></i>'.$row->status.'</div>')
             ->add('created_at')
             ->add('created_at_formatted', fn ($row) => \Carbon\Carbon::parse($row->created_at)->format('d/m/Y'));
-
     }
 
     public function columns(): array
@@ -94,11 +90,6 @@ final class Index extends PowerGridComponent
         ];
     }
 
-    #[\Livewire\Attributes\On('edit')]
-    public function edit($rowId): void
-    {
-        $this->js('alert('.$rowId.')');
-    }
 
     public function actions(Room $row): array
     {
@@ -116,15 +107,7 @@ final class Index extends PowerGridComponent
                 ->tooltip('Delete This Room')
                 ->class('btn btn-sm btn-danger')
                 ->dispatch('deleteRoom', ['id' => $row->id]),
-            Button::add('details')
-                ->id()
-                ->tooltip('Go To Details ( Room Template )')
-                ->class('')
-                ->render(function ($row) {
-                    return Blade::render(<<<HTML
-                        <a class="btn btn-sm btn-info" wire:navigate href="{{ route('dashboard.room-template', $row->room_template_id  ) }}"><i class="bx bx-link-external"></i>Details</a>
-                        HTML);
-                }),
+
 
         ];
     }

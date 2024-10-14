@@ -30,6 +30,9 @@
     <!-- Theme Dark CSS -->
     <link rel="stylesheet" href="{{ asset('front_assets/css/theme-dark.css') }}">
 
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+
     <style>
         .header-right ul li a {
             margin-left: 0!important;

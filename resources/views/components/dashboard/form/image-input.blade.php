@@ -3,7 +3,7 @@
         'old_image' => 'old_image',
         'label' => 'Image',
         "src",
-        "src_old",
+        "src_old" => null,
     ])
 
 
@@ -30,18 +30,11 @@
     >
         <span class="spinner-border m-2"></span>
     </div>
-    @if (is_null($src) && !is_null($src_old))
+
+    @if (is_null($src) && $src_old != 'null')
         <img src="{{$src_old}}" class="img-fluid mt-2 img-thumbnail" style="height: 150px" wire:target="{{$name}}" wire:loading.attr="hidden" />
-    @else
-        <div class="position-relative">
-            <img src="{{$src?->temporaryUrl()}}" class="img-fluid mt-2 img-thumbnail" style="height: 150px" wire:target="{{$name}}" wire:loading.attr="hidden" />
-            <!-- Cancel upload button -->
-{{--            <button type="button" class="btn btn-sm btn-danger"--}}
-{{--                    wire:click="$cancelUpload('image')"--}}
-{{--            >--}}
-{{--                x--}}
-{{--            </button>--}}
-        </div>
+    @elseif(!is_null($src))
+        <img src="{{$src?->temporaryUrl()}}" class="img-fluid mt-2 img-thumbnail" style="height: 150px" wire:target="{{$name}}" wire:loading.attr="hidden" />
     @endif
 
 

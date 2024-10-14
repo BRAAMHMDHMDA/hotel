@@ -17,7 +17,7 @@ trait HasImage
         if ($image && is_null($width)){
             $image_path = $image->store(static::$imageFolder, static::$imageDisk);
             $data[$name_image_in_DB] = $image_path;
-        }else{
+        }elseif($image){
             $image_name = hexdec(uniqid()) .'.'. $image->getClientOriginalExtension();
             $image_path = static::$imageFolder.'/'.$image_name;
             $manager = new ImageManager(new Driver());

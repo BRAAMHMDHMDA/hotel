@@ -3,38 +3,29 @@
 namespace App\Livewire\Dashboard\Rooms;
 
 use App\Models\Room;
-use App\Models\RoomTemplate;
+use App\Models\RoomType;
 use Livewire\Component;
 
 class Edit extends Component
 {
-    public $number, $room_template_id, $status;
-    public $room_templates;
+    public $number, $room_type_id, $status;
+    public $room_types;
     public $room;
 
     protected $listeners = ['editRoom'];
 
-    public $name, $image, $old_image;
-    public $roomType;
-
     public function mount()
     {
-        $this->room_templates = RoomTemplate::select('id','room_type_id')->with('roomType:id,name')
-            ->get()
-            ->mapWithKeys(function ($roomTemplate) {
-                return [$roomTemplate->id => $roomTemplate->roomType->name];
-            })
-            ->toArray();
+        $this->room_types = RoomType::pluck('name','id')->toArray();
     }
 
-    public function rules():array { return Room::rules(); }
+    public function rules():array { return Room::rules($this->room->id); }
 
     public function editRoom($id)
     {
-
         $this->room = Room::findOrFail($id);
         $this->number = $this->room->number;
-        $this->room_template_id = $this->room->room_template_id;
+        $this->room_type_id = $this->room->room_type_id;
         $this->status = $this->room->status;
 
         $this->resetValidation();

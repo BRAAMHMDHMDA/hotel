@@ -3,30 +3,17 @@
 namespace App\Livewire\Dashboard\Rooms;
 
 use App\Models\Room;
-use App\Models\RoomTemplate;
+use App\Models\RoomType;
 use Livewire\Component;
 
 class Create extends Component
 {
-    public $number, $room_template_id, $status;
-    public $room_templates;
+    public $number, $room_type_id, $status=Room::STATUS_DRAFT;
+    public $room_types;
 
     public function mount()
     {
-        $this->room_templates = RoomTemplate::select('id','room_type_id')->with('roomType:id,name')
-            ->get()
-            ->mapWithKeys(function ($roomTemplate) {
-                return [$roomTemplate->id => $roomTemplate->roomType->name];
-            })
-            ->toArray();
-
-//        $this->room_templates = RoomTemplate::select('id', 'room_type_id') // assuming room_type_id is the foreign key
-//        ->with('roomType:id,name')
-//            ->get()
-//            ->pluck('id', 'roomType.name')
-//            ->toArray();
-//        dd($this->room_templates);
-
+        $this->room_types = RoomType::pluck('name','id')->toArray();
     }
 
     public function rules(){

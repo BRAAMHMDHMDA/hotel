@@ -7,7 +7,7 @@
         </div>
         <div class="row mb-4">
             <div class="col">
-                <x-dashboard.form.select label="Room Template" :options="$room_templates" name="room_template_id" />
+                <x-dashboard.form.select label="Room Type" :options="$room_types" name="room_type_id" />
             </div>
         </div>
         <div class="row mb-4">

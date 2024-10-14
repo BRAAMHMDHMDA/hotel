@@ -2,11 +2,10 @@
 
     <x-dashboard.breadcrumb mainTitle="Room Types">
             <div class="ms-auto">
-                <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
+                <a class="btn btn-primary radius-30" wire:navigate href="{{ route('dashboard.room-type.create') }}">
                     <i class="bx bxs-plus-square"></i>
                     <span>Add New</span>
-                </button>
-                <livewire:dashboard.room-types.create />
+                </a>
             </div>
     </x-dashboard.breadcrumb>
 
@@ -15,8 +14,6 @@
             <livewire:dashboard.room-types.index />
         </div>
     </div>
-    <livewire:dashboard.room-types.edit />
-    <livewire:dashboard.room-types.delete />
 
 </x-dashboard.dashboard-layout>
 

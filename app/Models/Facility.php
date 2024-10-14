@@ -20,9 +20,9 @@ class Facility extends Model
         ];
     }
 
-    public function roomTemplates(): BelongsToMany
+    public function roomTypes(): BelongsToMany
     {
-        return $this->belongsToMany(RoomTemplate::class);
+        return $this->belongsToMany(RoomType::class);
 
     }
 }

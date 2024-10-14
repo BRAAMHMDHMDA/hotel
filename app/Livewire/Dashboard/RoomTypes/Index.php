@@ -43,7 +43,7 @@ final class Index extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return RoomType::with('roomTemplate:id,room_type_id');
+        return RoomType::withCount('rooms');
     }
 
     public function fields(): PowerGridFields
@@ -52,7 +52,8 @@ final class Index extends PowerGridComponent
             ->add('id')
             ->add('name')
             ->add('preview' , fn ($member) => '<div class="d-flex align-items-center"><img class="img-thumbnail me-2" style="height: 80px;" src="'.$member->image_url.'" alt="Image"><span>'.$member->name.'</span></div>')
-            ->add('view_details' , fn ($row) => !$row->roomTemplateIsComplete() ? '<a class="btn btn-sm rounded-pill btn-warning" wire:navigate href=" '. route('dashboard.room-template', $row->roomTemplate->id) .'"><i class="bx bxs-edit"></i>Complete Details</a>' : '<a class="btn btn-sm rounded-pill btn-primary" wire:navigate href=" '. route('dashboard.room-template',  $row->roomTemplate->id) .'"><i class="bx bx-show"></i>View Details</a>')
+            ->add('rooms_count')
+            ->add('status', fn($row) => $row->status==='active'? '<div class="badge rounded-pill text-success bg-light-success p-2 text-uppercase px-3"><i class="bx bxs-circle me-1"></i>'.$row->status.'</div>': '<div class="badge rounded-pill text-warning bg-light-warning p-2 text-uppercase px-3"><i class="bx bxs-circle me-1"></i>'.$row->status.'</div>')
             ->add('created_at')
             ->add('created_at_formatted', fn ($row) => \Carbon\Carbon::parse($row->created_at)->format('d/m/Y'));
     }
@@ -60,14 +61,17 @@ final class Index extends PowerGridComponent
     public function columns(): array
     {
         return [
-//            Column::make('Id', 'id'),
             Column::make('Name', 'preview' ,'name')
+                ->sortable()
+                ->searchable(),
+            Column::make('Rooms Count', 'rooms_count'),
+
+            Column::make('Status', 'status')
                 ->sortable()
                 ->searchable(),
 
             Column::make('Created at', 'created_at_formatted', 'created_at')
                 ->sortable(),
-            Column::make('View Details', 'view_details'),
 
             Column::action('Action')
         ];
@@ -78,21 +82,13 @@ final class Index extends PowerGridComponent
     {
         return [
             Button::add('edit')
-                ->slot('<i class="bx bx-edit-alt"></i>Edit')
                 ->id()
-                ->class('btn btn-sm btn-info')
                 ->tooltip('Edit')
-                ->dispatch('editRoomType', ['id' => $row->id]),
-//
-//            Button::add('completeDetails')
-//                ->id()
-//                ->tooltip('Complete Details')
-//                ->render(function ($row) {
-//                    return Blade::render(<<<HTML
-//                        <a class="btn btn-sm btn-warning" wire:navigate href="{{ route('dashboard.room-template', $row->id) }}"><i class="bx bx-edit-alt"></i>Complete Details</a>
-//                        HTML);
-//                }),
-
+                ->render(function ($row) {
+                    return Blade::render(<<<HTML
+                        <a class="btn btn-sm btn-info" wire:navigate href="{{ route('dashboard.room-type.edit', $row->id) }}"><i class="bx bx-edit-alt"></i>Edit</a>
+                        HTML);
+                }),
             Button::add('delete')
                 ->slot('<i class="bx bx-trash"></i>Delete')
                 ->id()

@@ -2,7 +2,7 @@
 <div class="navbar-area">
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
-        <a href="#" class="logo">
+        <a wire:navigate href="{{route('home')}}" class="logo">
             <img src="{{ asset('front_assets/img/logos/logo-1.png') }}" class="logo-one" alt="Logo">
             <img src="{{ asset('front_assets/img/logos/footer-logo1.png') }}" class="logo-two" alt="Logo">
         </a>
@@ -12,7 +12,7 @@
     <div class="main-nav">
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" wire:navigate href="{{route('home')}}">
                     <img src="{{ asset('front_assets/img/logos/logo-1.png') }}" class="logo-one" alt="Logo">
                     <img src="{{ asset('front_assets/img/logos/footer-logo1.png') }}" class="logo-two" alt="Logo">
                 </a>
@@ -20,27 +20,9 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">
+                            <a wire:navigate href="{{route('home')}}"  class="nav-link active">
                                 Home
-                                <i class='bx bx-chevron-down'></i>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link active">
-                                        Home One
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Home Two
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Home Three
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -187,22 +169,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a wire:navigate href="{{ route('rooms') }}" class="nav-link">
                                 Rooms
-                                <i class='bx bx-chevron-down'></i>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Rooms
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Room Details
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">
@@ -212,12 +181,20 @@
                         </li>
 
                         <li class="nav-item-btn">
-                            <a href="#" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                            @if(session('bookingData'))
+                                <a wire:navigate href="{{route('checkout')}}" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                            @else
+                                <a wire:navigate href="{{route('rooms')}}" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                            @endif
                         </li>
                     </ul>
 
                     <div class="nav-btn">
-                        <a href="#" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                        @if(session('bookingData'))
+                            <a wire:navigate href="{{route('checkout')}}" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                        @else
+                            <a wire:navigate href="{{route('rooms')}}" class="default-btn btn-bg-one border-radius-5">Book Now</a>
+                        @endif
                     </div>
                 </div>
             </nav>

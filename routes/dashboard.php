@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Dashboard\{
     Auth\AuthenticatedSessionController,
 };
+use \App\Livewire\Dashboard\{
+    RoomTypes\Create as Create_RoomType,
+    RoomTypes\Edit as Edit_RoomType,
+};
 
 
 /**
@@ -35,7 +39,8 @@ Route::group([
 
     //================= Room-Types Management Route=================
     Route::view('room-types', 'dashboard.room-types.index')->name('room-types');
-    Route::get('room-template/{id}', \App\Livewire\Dashboard\RoomTemplates\Edit::class)->name('room-template');
+    Route::get('room-types/create', Create_RoomType::class)->name('room-type.create');
+    Route::get('room-types/{roomType}/edit', Edit_RoomType::class)->name('room-type.edit');
 
     //================= Rooms Management Route=================
     Route::view('rooms', 'dashboard.rooms.index')->name('rooms');
@@ -45,3 +50,15 @@ Route::group([
 
 
 
+Route::get('test', function (){
+    $checkIn = "2024-10-07";   // Requested check-in date
+    $checkOut = "2024-10-8 "; // Requested check-out date
+
+    $availableRooms = \App\Models\Room::whereDoesntHave('bookings', function ($query) use ($checkIn, $checkOut) {
+        $query->where(function ($query) use ($checkIn, $checkOut) {
+            $query->where('check_in', '<', $checkOut)
+                ->where('check_out', '>', $checkIn);
+        });
+    })->get();
+    echo $availableRooms;
+});
