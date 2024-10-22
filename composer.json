@@ -12,7 +12,8 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.5",
-        "power-components/livewire-powergrid": "^5.10"
+        "power-components/livewire-powergrid": "^5.10",
+        "stripe/stripe-php": "^16.1"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.14",

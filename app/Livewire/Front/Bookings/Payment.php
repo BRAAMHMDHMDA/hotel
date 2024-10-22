@@ -1,0 +1,46 @@
+<?php
+
+namespace App\Livewire\Front\Bookings;
+
+use App\Models\Booking;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
+
+class Payment extends Component
+{
+    public $booking;
+    public $client_secret;
+
+    public function mount(Booking $booking): void
+    {
+        $booking->load('roomType');
+        $this->booking = $booking;
+        $this->createStripePaymentIntent();
+    }
+
+    public function createStripePaymentIntent():void
+    {
+
+        $stripe = new \Stripe\StripeClient(config('services.stripe.secret_key'));
+        $paymentIntent = $stripe->paymentIntents->create([
+            'amount' => $this->booking->total_price * 100,
+            'currency' => 'USD',
+            'payment_method_types' => ['card'],
+        ]);
+
+        $this->client_secret = $paymentIntent->client_secret;
+    }
+
+    public function render()
+    {
+        if (Auth::user()->id !== $this->booking->user_id){
+            abort(404);
+        }elseif ($this->booking->payment_status === 'paid') {
+            abort(403, "This Booking Paid");
+        }
+        return view('front.bookings.payment')->layout('front.layout.master', [
+            'title' => 'Payment',
+        ]);
+    }
+}

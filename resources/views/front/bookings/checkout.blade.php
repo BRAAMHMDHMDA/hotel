@@ -1,0 +1,139 @@
+<div>
+    <!-- Inner Banner -->
+    @include('front.layout.sections._banner', ['current_page'=> 'Check Out'])
+    <!-- Inner Banner End -->
+
+    <!-- Checkout Area -->
+    <section class="checkout-area pt-100 pb-70">
+        <div class="container">
+            <form wire:submit.prevent="submit" method="post"  id="payment-form" >
+                @csrf
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="billing-details">
+                            <h3 class="title">Billing Details</h3>
+
+                            <div class="row mt-4 mb-2">
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="name" value="{{Auth::user()->first_name}} {{Auth::user()->last_name}}" label="Name" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="email" value="{{Auth::user()->email}}" label="Email Address" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="country" label="Country" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="state" label="State" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="city" label="Town / City" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="address" label="Address" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="phone" label="Phone" required/>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="form-group">
+                                        <x-front.form.input name="zip_code" label="Postcode / Zip" required/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <section class="checkout-area pb-20">
+                            <div class="card-body pt-0">
+                                <div class="billing-details mb-0">
+                                    <h3 class="title">Booking Summary</h3>
+                                    <hr>
+                                    <div class="d-flex align-items-start">
+                                        <img class="img-thumbnail" style="height:100px; width:120px;object-fit: cover" src="{{$room_type->image_url}}" alt="Images" alt="Images">
+                                        <div class="align-self-center" style="padding-left: 10px;">
+                                            <a href=" " style="font-size: 18px; color: #595959;font-weight: bold">{{$room_type->name}}</a>
+                                            <p><b>{{$room_type->price}}$ / Night</b></p>
+                                        </div>
+                                    </div>
+
+                                    <br>
+
+                                    <table class="table" style="width: 100%">
+
+                                        <tr>
+                                            <td><p>Total Night ({{$total_night}})</p></td>
+                                            <td style="text-align: right"><p>{{$room_type->name}}</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>Total Room</p></td>
+                                            <td style="text-align: right"><p>{{$number_of_rooms}} room</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>Subtotal</p></td>
+                                            <td style="text-align: right"><p>{{$sub_total}}$</p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>Discount</p></td>
+                                            <td style="text-align:right"> <p>{{$room_type->discount}}% <small>/room</small></p></td>
+                                        </tr>
+                                        <tr>
+                                            <td><p>Total</p></td>
+                                            <td style="text-align:right"> <p>{{$total_price}}$</p></td>
+                                        </tr>
+                                    </table>
+
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8">
+                        <div class="payment-box">
+                            <div class="payment-method">
+                                <p>
+                                    <input type="radio" id="cash-on-delivery" name="payment_method" value="COD"  wire:model.live="payment_method">
+                                    <label for="cash-on-delivery">Cash On Delivery</label>
+                                </p>
+                                <p>
+                                    <input type="radio" id="stripe" name="payment_method" value="stripe" wire:model.live="payment_method" >
+                                    <label for="stripe">Stripe</label>
+                                </p>
+                            </div>
+                            <x-front.form.submit-btn class="btn btn-danger btn-bg-three w-100 p-3 text-white">
+                                Make a Booking
+                            </x-front.form.submit-btn>
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Checkout Area End -->
+</div>

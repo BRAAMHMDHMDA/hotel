@@ -36,7 +36,7 @@
                             <div class="col-lg-7 col-md-8 p-0">
                                 <div class="room-card-content">
                                     <h3>
-                                        <a href="room-details.html">Luxury Room</a>
+                                        <a href="#">Luxury Room</a>
                                     </h3>
                                     <span>320 / Per Night </span>
                                     <div class="rating">
@@ -57,7 +57,7 @@
                                         <li><i class='bx bxs-hotel'></i> Kingsize / Twin</li>
                                     </ul>
 
-                                    <a href="room-details.html" class="book-more-btn">
+                                    <a href="#" class="book-more-btn">
                                         Book Now
                                     </a>
                                 </div>
@@ -71,7 +71,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
-                                    <a href="room-details.html">
+                                    <a href="#">
                                         <img src="{{ asset('front_assets/img/room/room-style-img2.jpg') }}" alt="Images">
                                     </a>
                                 </div>
@@ -80,7 +80,7 @@
                             <div class="col-lg-7 col-md-8 p-0">
                                 <div class="room-card-content">
                                     <h3>
-                                        <a href="room-details.html">Single Room</a>
+                                        <a href="#">Single Room</a>
                                     </h3>
                                     <span>300 / Per Night </span>
                                     <div class="rating">
@@ -101,7 +101,7 @@
                                         <li><i class='bx bxs-hotel'></i> Smallsize / Twin</li>
                                     </ul>
 
-                                    <a href="room-details.html" class="book-more-btn">
+                                    <a href="#" class="book-more-btn">
                                         Book Now
                                     </a>
                                 </div>
@@ -115,7 +115,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
-                                    <a href="room-details.html">
+                                    <a href="#">
                                         <img src="{{ asset('front_assets/img/room/room-style-img3.jpg') }}" alt="Images">
                                     </a>
                                 </div>
@@ -124,7 +124,7 @@
                             <div class="col-lg-7 col-md-8 p-0">
                                 <div class="room-card-content">
                                     <h3>
-                                        <a href="room-details.html">Family Room</a>
+                                        <a href="#">Family Room</a>
                                     </h3>
                                     <span>400 / Per Night </span>
                                     <div class="rating">
@@ -145,7 +145,7 @@
                                         <li><i class='bx bxs-hotel'></i> Kingsize / Twin</li>
                                     </ul>
 
-                                    <a href="room-details.html" class="book-more-btn">
+                                    <a href="#" class="book-more-btn">
                                         Book Now
                                     </a>
                                 </div>
@@ -159,7 +159,7 @@
                         <div class="row align-items-center">
                             <div class="col-lg-5 col-md-4 p-0">
                                 <div class="room-card-img">
-                                    <a href="room-details.html">
+                                    <a href="#">
                                         <img src="{{ asset('front_assets/img/room/room-style-img4.jpg') }}" alt="Images">
                                     </a>
                                 </div>
@@ -168,7 +168,7 @@
                             <div class="col-lg-7 col-md-8 p-0">
                                 <div class="room-card-content">
                                     <h3>
-                                        <a href="room-details.html">Deluxe Room</a>
+                                        <a href="#">Deluxe Room</a>
                                     </h3>
                                     <span>340 / Per Night </span>
                                     <div class="rating">
@@ -189,7 +189,7 @@
                                         <li><i class='bx bxs-hotel'></i> Kingsize / Twin</li>
                                     </ul>
 
-                                    <a href="room-details.html" class="book-more-btn">
+                                    <a href="#" class="book-more-btn">
                                         Book Now
                                     </a>
                                 </div>
@@ -243,12 +243,12 @@
                     <div class="service-item-two">
                         <i class="flaticon-hotel"></i>
                         <div class="content">
-                            <h3><a href="service-details.html">Hotel Room Reservation into the Desire Places</a></h3>
+                            <h3><a href="#">Hotel Room Reservation into the Desire Places</a></h3>
                             <p>
                                 You can easily reserve a hotel room in a good place as you want. This will be able to make good feelings.
                                 This will be really effective for us and all & all of the customers & clients.
                             </p>
-                            <a href="service-details.html" class="read-btn">Read More</a>
+                            <a href="#" class="read-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -257,12 +257,12 @@
                     <div class="service-item-two">
                         <i class="flaticon-resort"></i>
                         <div class="content">
-                            <h3><a href="service-details.html">Resort Reservation Into the Good and Suitable Place</a></h3>
+                            <h3><a href="#">Resort Reservation Into the Good and Suitable Place</a></h3>
                             <p>
                                 You can easily reserve a hotel room in a good place as you want. This will be able to make good feelings.
                                 This will be really effective for us and all & all of the customers & clients.
                             </p>
-                            <a href="service-details.html" class="read-btn">Read More</a>
+                            <a href="#" class="read-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -271,12 +271,12 @@
                     <div class="service-item-two">
                         <i class="flaticon-buildings"></i>
                         <div class="content">
-                            <h3><a href="service-details.html">Weeding Hall Reservation in the Suitable and Good Place</a></h3>
+                            <h3><a href="#">Weeding Hall Reservation in the Suitable and Good Place</a></h3>
                             <p>
                                 You can easily reserve a hotel room in a good place as you want. This will be able to make good feelings.
                                 This will be really effective for us and all & all of the customers & clients.
                             </p>
-                            <a href="service-details.html" class="read-btn">Read More</a>
+                            <a href="#" class="read-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -285,12 +285,12 @@
                     <div class="service-item-two">
                         <i class="flaticon-businessmen"></i>
                         <div class="content">
-                            <h3><a href="service-details.html">Conference Room Reservation in the Suitable and Good Place</a></h3>
+                            <h3><a href="#">Conference Room Reservation in the Suitable and Good Place</a></h3>
                             <p>
                                 You can easily reserve a hotel room in a good place as you want. This will be able to make good feelings.
                                 This will be really effective for us and all & all of the customers & clients.
                             </p>
-                            <a href="service-details.html" class="read-btn">Read More</a>
+                            <a href="#" class="read-btn">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -308,11 +308,11 @@
             </div>
             <div class="team-slider-two owl-carousel owl-theme pt-45">
                 <div class="team-item">
-                    <a href="team.html">
+                    <a href="#">
                         <img src="{{ asset('front_assets/img/team/team-img1.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
-                        <h3><a href="team.html">Tom Shumate</a></h3>
+                        <h3><a href="#">Tom Shumate</a></h3>
                         <span>Manager</span>
                         <ul class="social-link">
                             <li>
@@ -332,11 +332,11 @@
                 </div>
 
                 <div class="team-item">
-                    <a href="team.html">
+                    <a href="#">
                         <img src="{{ asset('front_assets/img/team/team-img2.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
-                        <h3><a href="team.html">Carrie Horton</a></h3>
+                        <h3><a href="#">Carrie Horton</a></h3>
                         <span>Chief Reception Officer</span>
                         <ul class="social-link">
                             <li>
@@ -356,11 +356,11 @@
                 </div>
 
                 <div class="team-item">
-                    <a href="team.html">
+                    <a href="#">
                         <img src="{{ asset('front_assets/img/team/team-img5.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
-                        <h3><a href="team.html">Brian Orlando</a></h3>
+                        <h3><a href="#">Brian Orlando</a></h3>
                         <span>Housekeeping</span>
                         <ul class="social-link">
                             <li>
@@ -380,11 +380,11 @@
                 </div>
 
                 <div class="team-item">
-                    <a href="team.html">
+                    <a href="#">
                         <img src="{{ asset('front_assets/img/team/team-img4.jpg') }}" alt="Images">
                     </a>
                     <div class="content">
-                        <h3><a href="team.html">Michael Evens</a></h3>
+                        <h3><a href="#">Michael Evens</a></h3>
                         <span>Housekeeping</span>
                         <ul class="social-link">
                             <li>
@@ -563,7 +563,7 @@
             <div class="row pt-45">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
-                        <a href="blog-details.html">
+                        <a href="#">
                             <img src="{{ asset('front_assets/img/blog/blog-item-img1.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
@@ -573,10 +573,10 @@
                                 <li><i class='bx bx-message-alt-dots'></i>15K</li>
                             </ul>
                             <h3>
-                                <a href="blog-details.html">Hotel Management is the Best Policy</a>
+                                <a href="#">Hotel Management is the Best Policy</a>
                             </h3>
                             <p>This is one of the best & quality full hotels in the world that will help you to make an excellent study market.</p>
-                            <a href="blog-details.html" class="read-btn">
+                            <a href="#" class="read-btn">
                                 Read More
                             </a>
                         </div>
@@ -585,7 +585,7 @@
 
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item">
-                        <a href="blog-details.html">
+                        <a href="#">
                             <img src="{{ asset('front_assets/img/blog/blog-item-img2.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
@@ -595,10 +595,10 @@
                                 <li><i class='bx bx-message-alt-dots'></i>24K</li>
                             </ul>
                             <h3>
-                                <a href="blog-details.html">3d Hotel Models Have an Important Model</a>
+                                <a href="#">3d Hotel Models Have an Important Model</a>
                             </h3>
                             <p>This is one of the best & quality full hotels in the world that will help you to make an excellent study market.</p>
-                            <a href="blog-details.html" class="read-btn">
+                            <a href="#" class="read-btn">
                                 Read More
                             </a>
                         </div>
@@ -607,7 +607,7 @@
 
                 <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
                     <div class="blog-item">
-                        <a href="blog-details.html">
+                        <a href="#">
                             <img src="{{ asset('front_assets/img/blog/blog-item-img3.jpg') }}" alt="Images">
                         </a>
                         <div class="content">
@@ -617,10 +617,10 @@
                                 <li><i class='bx bx-message-alt-dots'></i>39K</li>
                             </ul>
                             <h3>
-                                <a href="blog-details.html">Hotel Management Has a Good Future Era</a>
+                                <a href="#">Hotel Management Has a Good Future Era</a>
                             </h3>
                             <p>This is one of the best & quality full hotels in the world that will help you to make an excellent study market.</p>
-                            <a href="blog-details.html" class="read-btn">
+                            <a href="#" class="read-btn">
                                 Read More
                             </a>
                         </div>

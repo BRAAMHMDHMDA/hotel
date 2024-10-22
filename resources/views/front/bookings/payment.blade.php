@@ -1,0 +1,152 @@
+<div>
+    <!-- Inner Banner -->
+    @include('front.layout.sections._banner', ['current_page'=> 'Payment Booking'])
+    <!-- Inner Banner End -->
+
+    <!-- Checkout Area -->
+    <section class="checkout-area pt-100 pb-70">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-5">
+                    <div class="card-body billing-details">
+
+                    <div id="payment-message" class="alert alert-info hidden"></div>
+
+                    <form action="" method="post" id="payment-form">
+
+                        <div id="payment-element"></div>
+
+                        <button type="submit" id="submit" class="default-btn btn-bg-one border-radius-5 " style="margin-top: 25px">
+                            <span id="button-text">Pay Now</span>
+                            <span id="spinner" class="hidden">Processing..</span>
+                        </button>
+                    </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <section class="checkout-area pb-20 px-3">
+                        <div class="card-body pt-0">
+                            <div class="billing-details mb-0">
+                                <h3 class="title">Booking Summary</h3>
+                                <hr>
+                                <div class="d-flex align-items-start">
+                                    <img class="img-thumbnail" style="height:100px; width:120px;object-fit: cover" src="{{$booking->roomType->image_url}}" alt="Images">
+                                    <div class="align-self-center" style="padding-left: 10px;">
+                                        <a href=" " style="font-size: 18px; color: #595959;font-weight: bold">{{$booking->roomType->name}}</a>
+                                        <p><b>{{$booking->roomType->price}}$ / Night</b></p>
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <table class="table" style="width: 100%">
+
+                                    <tr>
+                                        <td><p>Total Night ({{$booking->total_night}})</p></td>
+                                        <td style="text-align: right"><p>{{$booking->roomType->name}}</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Total Room</p></td>
+                                        <td style="text-align: right"><p>{{$booking->number_of_rooms}} room</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Subtotal</p></td>
+                                        <td style="text-align: right"><p>{{$booking->sub_total}}$</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Discount</p></td>
+                                        <td style="text-align:right"> <p>{{$booking->roomType->discount}}% <small>/room</small></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p>Total</p></td>
+                                        <td style="text-align:right"> <p>{{$booking->total_price}}$</p></td>
+                                    </tr>
+                                </table>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Checkout Area End -->
+</div>
+
+@push('scripts')
+    <script src="https://js.stripe.com/v3/" data-navigate-once></script>
+
+    <script data-navigate-once>
+        document.addEventListener('livewire:navigated', () => {
+            const stripe = Stripe("{{ config('services.stripe.publishable_key') }}");
+            let elements;
+            let paymentElement;
+            let clientSecret = @this.get('client_secret'); // Get the client secret from Livewire
+
+            elements = stripe.elements({ clientSecret });
+            paymentElement = elements.create("payment");
+
+            paymentElement.mount("#payment-element");
+
+            document.querySelector("#payment-form").addEventListener("submit", handleSubmit);
+
+            async function handleSubmit(e) {
+                e.preventDefault();
+                setLoading(true);
+
+                const {
+                    error
+                } = await stripe.confirmPayment({
+                    elements,
+                    confirmParams: {
+                        // Make sure to change this to your payment completion page
+                        return_url: "{{ route('stripe.return', $booking->id) }}",
+                    },
+                });
+
+                // This point will only be reached if there is an immediate error when
+                // confirming the payment. Otherwise, your customer will be redirected to
+                // your `return_url`. For some payment methods like iDEAL, your customer will
+                // be redirected to an intermediate site first to authorize the payment, then
+                // redirected to the `return_url`.
+                if (error.type === "card_error" || error.type === "validation_error") {
+                    showMessage(error.message);
+                } else {
+                    showMessage("An unexpected error occurred.");
+                }
+
+                setLoading(false);
+            }
+
+            // ------- UI helpers -------
+            function showMessage(messageText) {
+                const messageContainer = document.querySelector("#payment-message");
+
+                messageContainer.classList.remove("hidden");
+                messageContainer.textContent = messageText;
+
+                setTimeout(function () {
+                    messageContainer.classList.add("hidden");
+                    messageContainer.textContent = "";
+                }, 4000);
+            }
+
+            // Show a spinner on payment submission
+            function setLoading(isLoading) {
+                if (isLoading) {
+                    // Disable the button and show a spinner
+                    document.querySelector("#submit").disabled = true;
+                    document.querySelector("#spinner").classList.remove("hidden");
+                    document.querySelector("#button-text").classList.add("hidden");
+                } else {
+                    document.querySelector("#submit").disabled = false;
+                    document.querySelector("#spinner").classList.add("hidden");
+                    document.querySelector("#button-text").classList.remove("hidden");
+                }
+            }
+        })
+
+    </script>
+@endpush
+

@@ -6,7 +6,7 @@
     <!-- Checkout Area -->
     <section class="checkout-area pt-100 pb-70">
         <div class="container">
-            <form wire:submit.prevent="submit" method="post">
+            <form wire:submit.prevent="submit" method="post"  id="payment-form" >
                 @csrf
                 <div class="row">
                     <div class="col-lg-8">
@@ -116,25 +116,22 @@
                     <div class="col-lg-8 col-md-8">
                         <div class="payment-box">
                             <div class="payment-method">
+                                @dump($payment_method)
                                 <p>
-                                    <input type="radio" id="direct-bank-transfer" name="payment_method" >
-                                    <label for="direct-bank-transfer">Direct Bank Transfer</label>
-                                    Make your payment directly into our bank account. Please use your Order
-                                    ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
-                                </p>
-                                <p>
-                                    <input type="radio" id="paypal" name="payment_method">
-                                    <label for="paypal">PayPal</label>
-                                </p>
-                                <p>
-                                    <input type="radio" id="cash-on-delivery" name="payment_method" value="COD" checked wire:model="payment_method">
+                                    <input type="radio" id="cash-on-delivery" name="payment_method" value="COD"  wire:model.live="payment_method">
                                     <label for="cash-on-delivery">Cash On Delivery</label>
                                 </p>
+                                <p>
+                                    <input type="radio" id="stripe" name="payment_method" value="stripe" wire:model.live="payment_method" >
+                                    <label for="stripe">Stripe</label>
+                                </p>
+                                    <div id="payment-element" style="margin: 50px 0"></div>
                             </div>
                             <x-front.form.submit-btn class="btn btn-danger btn-bg-three w-100 p-3 text-white">
                                 Make a Booking
                             </x-front.form.submit-btn>
                         </div>
+
                     </div>
 
                 </div>
@@ -143,3 +140,65 @@
     </section>
     <!-- Checkout Area End -->
 </div>
+@push('scripts')
+    <script>
+
+        document.addEventListener('livewire:initialized', () => {
+            let payment_method = @this.get('payment_method');
+            const stripe = Stripe("{{ config('services.stripe.publishable_key') }}");
+            let elements;
+            let paymentElement;
+
+            // Function to initialize and mount the payment element
+            function mountPaymentElement() {
+
+                let clientSecret = @this.get('client_secret'); // Get the client secret from Livewire
+                if (elements) {
+                    elements = null; // Clear the previous instance of Stripe elements
+                }
+                elements = stripe.elements({ clientSecret });
+                paymentElement = elements.create("payment");
+                console.log(clientSecret, elements, paymentElement);
+                paymentElement.mount("#payment-element");
+            }
+
+            // Function to unmount (destroy) the payment element
+            function unmountPaymentElement() {
+                if (paymentElement) {
+                    paymentElement.unmount(); // Unmount the element from the DOM
+                }
+            }
+
+            function paymentForm() {
+                let payment_method = @this.get('payment_method');
+                console.log('paymentForm')
+                console.log(payment_method)
+                if ( payment_method === 'stripe' ) {
+                    mountPaymentElement();
+                }else {
+                    unmountPaymentElement();
+                }
+            }
+
+            paymentForm();
+
+            document.addEventListener('refreshPaymentMethod', function () {
+                console.log('refreshPaymentMethod')
+                console.log(payment_method)
+                paymentForm();
+            });
+        })
+
+
+    </script>
+@endpush
+
+{{--@script--}}
+{{--    <script>--}}
+{{--      --}}
+
+
+{{--    </script>--}}
+{{--@endscript--}}
+
+

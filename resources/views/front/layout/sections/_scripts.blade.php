@@ -1,4 +1,3 @@
-@livewireScripts
 
 <!-- Jquery Min JS -->
 <script src="{{ asset('front_assets/js/jquery.min.js') }}" data-navigate-once></script>
@@ -40,6 +39,7 @@
     toastr.error(" {{ Session::get('error') }} ");
     @endif
 </script>
+@livewireScripts
 
 @stack('scripts')
 

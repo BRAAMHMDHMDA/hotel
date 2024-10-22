@@ -44,21 +44,6 @@ Route::group([
 
     //================= Rooms Management Route=================
     Route::view('rooms', 'dashboard.rooms.index')->name('rooms');
+    Route::view('bookings', 'dashboard.rooms.index')->name('rooms');
 
-});
-
-
-
-
-Route::get('test', function (){
-    $checkIn = "2024-10-07";   // Requested check-in date
-    $checkOut = "2024-10-8 "; // Requested check-out date
-
-    $availableRooms = \App\Models\Room::whereDoesntHave('bookings', function ($query) use ($checkIn, $checkOut) {
-        $query->where(function ($query) use ($checkIn, $checkOut) {
-            $query->where('check_in', '<', $checkOut)
-                ->where('check_out', '>', $checkIn);
-        });
-    })->get();
-    echo $availableRooms;
 });

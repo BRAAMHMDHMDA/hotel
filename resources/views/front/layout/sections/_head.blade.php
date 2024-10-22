@@ -38,6 +38,9 @@
             margin-left: 0!important;
             padding-left: 25px!important;
         }
+        .hidden{
+            display: none;
+        }
     </style>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('front_assets/img/favicon.png') }}">

@@ -7,7 +7,7 @@
         {{$slot}}
     </span>
     <span class="spinner-border spinner-border-sm text-white ms-1"
-          role="status" wire:loading wire:target="submit"
+          role="status" wire:loading
     >
         <span class="visually-hidden">Loading...</span>
     </span>

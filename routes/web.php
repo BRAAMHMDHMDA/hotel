@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use \App\Livewire\Front\{
+use App\Livewire\Front\{
     Rooms\Index as Rooms,
     Rooms\Show as Show_Room,
-    Rooms\Checkout,
+    Bookings\Checkout,
+    Bookings\Payment,
 };
 
 
@@ -13,17 +14,23 @@ use \App\Livewire\Front\{
 Route::redirect('/', '/home');
 Route::view('home', 'front.home.index')->name('home');
 
+// ===================== Rooms Routes =====================================
 Route::get('rooms', Rooms::class)->name('rooms');
 Route::get('rooms/{slug}', Show_Room::class)->name('room.show');
 
 Route::middleware('auth:web')->group(function () {
+    // ===================== User Routes =====================================
     Route::view('/user/dashboard', 'front.user.dashboard')->name('user.dashboard');
     Route::view('/user/profile', 'front.user.profile')->name('user.profile');
+    Route::view('/user/change-password', 'front.user.change-password')->name('user.change-password');
 
+    // ===================== Checkout Routes =====================================
     Route::get('checkout', Checkout::class)->name('checkout');
-
+    Route::get('bookings/{booking}/pay', Payment::class)
+        ->name('booking.payment');
+    Route::get('bookings/{booking}/pay/stripe/callback', \App\Actions\Front\CompletionStripePayment::class)
+        ->name('stripe.return');
 
 });
-Route::view('/user/change-password', 'front.user.change-password')->name('user.change-password');
 
 require __DIR__.'/auth.php';

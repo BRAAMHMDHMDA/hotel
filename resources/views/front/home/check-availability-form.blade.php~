@@ -48,11 +48,14 @@
 
 <script>
     initializeDatepickers();
+    console.log($.ui); // Should not be undefined
     document.addEventListener('livewire:load', function () {
+        console.log($.ui); // Should not be undefined
         initializeDatepickers();
 
         // Listen for Livewire updates
         Livewire.on('datepicker:reinitialize', () => {
+            console.log($.ui); // Should not be undefined
             initializeDatepickers();
         });
     });
