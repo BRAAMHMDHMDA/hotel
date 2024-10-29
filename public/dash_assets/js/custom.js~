@@ -36,8 +36,8 @@ document.addEventListener("notify_error", event => {
         icon: 'bx bx-x-circle',
         continueDelayOnInactiveTab: false,
         position: 'top right',
-        msg: event.detail[0],
-    });
+        msg: 'Lorem ipsum dolor sit amet hears farmer indemnity inherent.'
+    }); 
 });
 $(document).ready(function () {
     // Listen for the 'show-delete-confirmation' event

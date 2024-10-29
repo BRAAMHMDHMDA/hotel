@@ -28,7 +28,8 @@ class Checkout extends Component
 
             $this->room_type = $this->getRoomType($this->room_type_id, $this->persons, $this->check_in, $this->check_out);
             $this->total_night = $this->check_in->diff($this->check_out)->days;
-            $this->actual_price = $this->sub_total = $this->room_type->price * $this->number_of_rooms * $this->total_night;
+            $this->sub_total = $this->room_type->price * $this->number_of_rooms * $this->total_night;
+            $this->actual_price = $this->room_type->price;
             $this->discount = ($this->sub_total * ($this->room_type->discount/100));
             $this->total_price = $this->sub_total - $this->discount;
     }

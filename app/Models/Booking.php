@@ -36,8 +36,8 @@ class Booking extends Model
     ];
 
     protected $casts = [
-        'check_in' => 'datetime',
-        'check_out' => 'datetime',
+        'check_in' => 'date',
+        'check_out' => 'date',
     ];
 
     public static function rules() :array
@@ -83,7 +83,7 @@ class Booking extends Model
     protected static function booted()
     {
         static::creating(function ($booking) {
-            $booking->user_id = Auth::guard('web')->user()->id;
+            $booking->user_id = Auth::guard('web')->user()->id ?? null;
             $booking->code = self::generateBookingCode();
         });
     }
@@ -97,14 +97,19 @@ class Booking extends Model
         return $this->belongsToMany(Room::class);
     }
 
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
+
     private static function generateBookingCode()
     {
         // Generate a unique booking code (e.g., "BOOK-2024-00123")
-        $prefix = 'BOOK';
-        $timestamp = now()->format('Y-m-d'); // Current date
+//        $prefix = 'BOOK';
+        $timestamp = now()->format('ymd'); // Current date
         $uniqueId = str_pad(Booking::count() + 1, 5, '0', STR_PAD_LEFT); // Incremental ID
 
-        return "{$prefix}-{$timestamp}-{$uniqueId}";
+        return "{$timestamp}{$uniqueId}";
     }
 
 }

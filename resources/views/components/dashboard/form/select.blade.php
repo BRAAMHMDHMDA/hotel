@@ -1,5 +1,5 @@
 @props([
-     'name', 'label' => '' , 'options'
+     'name', 'label' => '' , 'options', 'oldValue'
 ])
 
 
@@ -8,7 +8,7 @@
     @endif
     <div>
         <select id="{{ $name }}"
-                wire:model="{{$name}}"
+                wire:model.live="{{$name}}"
                 data-allow-clear="false"
             {{ $attributes->class([
                           'form-select',
@@ -16,10 +16,15 @@
                          ])
            }}
         >
-            <option value="">--- Select {{ $label }} ---</option>
+            @empty($oldValue)
+                <option value="">--- Select {{ $label }} ---</option>
+            @endempty
             @foreach($options as $key => $value)
                 <option value="{{ $key }}"
                         wire:key="category-{{$key}}"
+                        @isset($oldValue)
+                            @selected($key == $oldValue)
+                        @endisset
                 >
                     {{ $value }}
                 </option>

@@ -5,8 +5,12 @@ use \App\Http\Controllers\Dashboard\{
     Auth\AuthenticatedSessionController,
 };
 use \App\Livewire\Dashboard\{
+
     RoomTypes\Create as Create_RoomType,
     RoomTypes\Edit as Edit_RoomType,
+
+    Bookings\Edit as Edit_Booking,
+    Bookings\Create as Create_Booking,
 };
 
 
@@ -44,6 +48,11 @@ Route::group([
 
     //================= Rooms Management Route=================
     Route::view('rooms', 'dashboard.rooms.index')->name('rooms');
-    Route::view('bookings', 'dashboard.rooms.index')->name('rooms');
+
+    //================= Bookings Management Route=================
+    Route::view('bookings', 'dashboard.bookings.index')->name('bookings');
+    Route::get('bookings/create', Create_Booking::class)->name('booking.create');
+    Route::get('bookings/{booking}/edit', Edit_Booking::class)->name('booking.edit');
+
 
 });

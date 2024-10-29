@@ -1,0 +1,285 @@
+<div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-5">
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-4 border-info">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Booking Code:</p>
+                            <h4 class="my-1 text-info font-14">{{$booking->code}}</h4>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-blues text-white ms-auto"><i class='bx bx-hash'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-4 border-danger">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Booking Date:</p>
+                            <h4 class="my-1 text-danger font-18">{{$booking->created_at->format('d M, Y')}}</h4>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-burning text-white ms-auto"><i class='bx bxs-calendar-event'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-4 border-danger">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Booking Status</p>
+                            <h4 class="my-1 text-danger font-18">{{Str::ucfirst($booking->status)}}</h4>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-burning text-white ms-auto"><i class='bx bx-right-indent'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-4 border-success">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Payment Status</p>
+                            <h4 class="my-1 text-success font-18">{{Str::ucfirst($booking->payment_status)}}</h4>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class='bx bxs-badge-dollar'></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card radius-10 border-start border-0 border-4 border-success">
+                <div class="card-body">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <p class="mb-0 text-secondary">Payment Method</p>
+                            <h4 class="my-1 text-success font-18">{{Str::ucfirst($booking->payment_method)}}</h4>
+                        </div>
+                        <div class="widgets-icons-2 rounded-circle bg-gradient-ohhappiness text-white ms-auto"><i class='bx bxs-wallet' ></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--end row-->
+
+    <div class="row">
+
+        <div class="col-12 col-lg-8 d-flex">
+            <div class="card radius-10 w-100">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h6 class="mb-0">Booking Details</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body radius-10 ">
+                    <table class="table align-middle mb-0 ">
+                            <thead class="table-light">
+                            <tr>
+                                <th>Room Type</th>
+                                <th>Rooms</th>
+                                <th>Price</th>
+                                <th>Check In/Out</th>
+                                <th>Nights</th>
+{{--                                <th>Total</th>--}}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$booking->roomType->name}}</td>
+                                <td>{{$booking->number_of_rooms}}</td>
+                                <td>{{$booking->actual_price}}$</td>
+                                <td>
+                                    <div class="badge bg-success">{{$booking->check_in->format('d M, Y')}}</div>
+                                    /<br />
+                                    <div class="badge bg-secondary">{{$booking->check_out->format('d M, Y')}}</div>
+                                </td>
+                                <td>{{$booking->total_night}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    <div class="col-5 ms-auto table-bordered mb-5">
+                        <table class="table">
+                            <tr class="text-end">
+                                <td class="text-right">SubTotal :</td>
+                                <td class="text-right">{{$booking->sub_total}}$</td>
+                            </tr>
+                            <tr class="text-end">
+                                <td class="text-right">Discount :</td>
+                                <td class="text-right">{{$booking->roomType->discount}}%</td>
+                            </tr>
+                            <tr class="text-end">
+                                <td class="text-right">Total :</td>
+                                <td class="text-right">{{$booking->total_price}}$</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="row mt-5 ">
+                        <div class="col-12">
+                            <div class="card-header mb-2">
+                                <div class="d-flex align-items-end">
+                                    <div>
+                                        <h6 class="mb-0">Booked Rooms</h6>
+                                    </div>
+                                    <div class="font-22 ms-auto">
+                                        <button class="btn btn-sm btn-outline-secondary"
+                                                type="button"
+                                                data-bs-toggle="modal" data-bs-target="#edit-modal"
+{{--                                                data-bs-target="#assign-modal"--}}
+                                        >
+                                            <i class="bx bx-plus"></i>
+                                            Assign Room
+                                        </button>
+                                        <x-dashboard.modal id="edit-modal" title="Assign Rooms" class="modal-md modal-dialog-centered" >
+                                            <div class="modal-body">
+                                                <table class="table table-bordered text-center">
+                                                <thead class="table-light">
+                                                    <th>Room Number</th>
+                                                    <th>action</th>
+                                                </thead>
+                                                <tbody>
+                                                    @empty(count($available_rooms))
+                                                        <tr>
+                                                            <td class="font-18" colspan="2">No Rooms Available</td>
+                                                        </tr>
+                                                    @else
+                                                        @foreach($available_rooms as $room)
+                                                            <tr wire:key="room-{{$room->id}}">
+                                                                <td class="font-18">#{{$room->number}}</td>
+                                                                <td>
+                                                                    <x-dashboard.form.btn
+                                                                        label="Booking"
+                                                                        icon="bx bx-plus"
+                                                                        class="btn-sm btn-outline-primary"
+                                                                        wire:click="addRoom({{$room->id}})"
+                                                                        target="addRoom({{$room->id}})"
+                                                                    />
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    @endempty
+                                                </tbody>
+                                            </table>
+                                            </div>
+                                        </x-dashboard.modal>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered text-center">
+                                <thead class="table-light">
+                                    <th>Room Number</th>
+                                    <th>action</th>
+                                </thead>
+                                <tbody>
+                                @foreach($booked_rooms as $room)
+                                    <tr>
+                                        <td class="font-18">#{{$room->number}}</td>
+                                        <td>
+                                            <x-dashboard.form.btn
+                                                label="unBooking"
+                                                icon="bx bx-minus"
+                                                class="btn-sm btn-outline-danger"
+                                                wire:click="removeRoom({{$room->id}})"
+                                                target="removeRoom({{$room->id}})"
+                                            />
+                                        </td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                            <x-dashboard.form.btn-submit label="Save" class="mt-3" wire:click="updateBookedRooms" target="updateBookedRooms"/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <div class="card radius-10 w-100">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h6 class="mb-0">Manage Status</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <x-dashboard.form.select label="Booking Status"
+                                                         :options="['pending'=> 'Pending', 'confirmed'=> 'Confirmed', 'completed'=> 'Completed','cancelled'=> 'Cancelled']"
+                                                         name="booking_status"
+                                                         :oldValue="$booking_status"
+                                                         class="mb-3"
+                                />
+                            </div>
+                            @if($booking->payment_method !== 'stripe' || $booking->payment_status !== 'paid')
+                                <div class="mb-3">
+                                    <x-dashboard.form.select label="Payment Status"
+                                                             :options="['pending'=> 'Pending', 'paid'=> 'Paid']"
+                                                             name="payment_status"
+                                                             :oldValue="$payment_status"
+                                                             class="mb-3"
+                                    />
+                                </div>
+                            @endif
+                            <div class="mt-3">
+                                <x-dashboard.form.btn-submit label="Save" class="mt-3" wire:click="updateStatus" target="updateStatus"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card radius-10 w-100">
+                <div class="card-header">
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <h6 class="mb-0">Billing Customer Details</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                               <span class="text-secondary"><i class="bx bx-user"></i></span> {{$booking->name}}
+                            </div>
+                            <div class="mb-3">
+                                <span class="text-secondary"><i class="bx bx-mail-send"></i></span> {{$booking->email}}
+                            </div>
+                            <div class="mb-3">
+                                <span class="text-secondary"><i class="bx bx-phone"></i></span> {{$booking->phone}}
+                            </div>
+                            {{--country--}}
+                            <div class="mb-3">
+                                <span class="text-secondary"><i class="bx bx-map"></i></span>
+                                {{$booking->country}}, {{$booking->city}}, {{$booking->state}}, {{$booking->address}}
+                            </div>
+                            <div class="mb-3">
+                                <span class="text-secondary"><i class="bx bx-pin"></i>Zip Code: </span> {{$booking->zip}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!--end row-->
+
+</div>

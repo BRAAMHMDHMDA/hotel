@@ -1,22 +1,38 @@
-<x-dashboard.dashboard-layout title="Rooms">
+<x-dashboard.dashboard-layout title="Bookings">
 
-    <x-dashboard.breadcrumb mainTitle="Rooms Management">
+    <x-dashboard.breadcrumb mainTitle="Bookings Management">
             <div class="ms-auto">
-                <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
+                <a class="btn btn-primary radius-30">
                     <i class="bx bxs-plus-square"></i>
-                    <span>Add New Room</span>
-                </button>
-                <livewire:dashboard.rooms.create />
+                    <span>Add New Booking</span>
+                </a>
             </div>
     </x-dashboard.breadcrumb>
 
     <div class="card">
         <div class="card-body">
-            <livewire:dashboard.rooms.index />
+            <div class="alert alert-warning border-0 bg-warning  alert-dismissible fade show py-0 " style="width: 35%">
+                <div class="d-flex align-items-center">
+                    <div class="font-24 text-dark">
+                        <i class="bx bx-bulb"></i>
+                    </div>
+                    <div class="ms-2">
+                        <div class="text-dark">Click on Code Booking to View Details or Edit</div>
+                    </div>
+                </div>
+                <button type="button" class="btn-close font-13" style="padding: 0.75rem 1rem" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <livewire:dashboard.bookings.index />
         </div>
     </div>
-    <livewire:dashboard.rooms.edit />
-    <livewire:dashboard.rooms.delete />
 
 </x-dashboard.dashboard-layout>
+
+{{--@script--}}
+{{--    <script>--}}
+{{--        Livewire.on('redirect', () => {--}}
+{{--            window.location.href = "{{ route('dashboard.bookings.index') }}";--}}
+{{--        })--}}
+{{--    </script>--}}
+{{--@endscript--}}
 

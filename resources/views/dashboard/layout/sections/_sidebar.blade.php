@@ -51,6 +51,15 @@
             </a>
         </li>
 
+        <li>
+            <a href="{{route('dashboard.bookings')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bx-calendar"></i>
+                </div>
+                <div class="menu-title">Bookings Manage</div>
+            </a>
+        </li>
+
     </ul>
     <!--end navigation-->
 </div>
