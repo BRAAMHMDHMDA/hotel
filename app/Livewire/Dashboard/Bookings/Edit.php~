@@ -90,9 +90,9 @@ class Edit extends Component
         $this->dispatch('notify_success', 'Booking Status Updated Successfully.');
     }
 
-    public function downloadInvoice(): \Symfony\Component\HttpFoundation\StreamedResponse
+    public function downloadInvoice(Booking $booking): \Symfony\Component\HttpFoundation\StreamedResponse
     {
-        return BookingInvoice::Download($this->booking);
+        return BookingInvoice::Download($booking);
     }
 
     public function render()

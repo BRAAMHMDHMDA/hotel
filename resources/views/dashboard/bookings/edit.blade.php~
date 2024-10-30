@@ -1,5 +1,5 @@
 <div>
-    <x-dashboard.breadcrumb mainTitle="Booking #{{$booking->code}}">
+    <x-dashboard.breadcrumb mainTitle="Booking {{$booking->code}}">
         <div class="ms-auto">
             <x-dashboard.form.btn label="Download Invoice"
                                          icon="bx bxs-download"

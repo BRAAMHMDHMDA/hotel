@@ -2,10 +2,15 @@
 
 namespace App\Livewire\Dashboard\Bookings;
 
+use App\Actions\Dashboard\BookingInvoice;
+use App\Actions\Dashboard\DownloadInvoice;
+use App\Actions\Dashboard\Invoice;
 use App\Models\Booking;
 use App\Models\RoomType;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Blade;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
 use PowerComponents\LivewirePowerGrid\Exportable;
@@ -121,9 +126,7 @@ final class Index extends PowerGridComponent
                 ->sortable()
                 ->searchable(),
 
-
-
-//            Column::action('Action')
+            Column::action('Action')
         ];
     }
 
@@ -157,22 +160,28 @@ final class Index extends PowerGridComponent
         ];
     }
 
-//    #[\Livewire\Attributes\On('edit')]
-//    public function edit($rowId): void
-//    {
-//        $this->js('alert('.$rowId.')');
-//    }
-//
-//    public function actions(Booking $row): array
-//    {
-//        return [
-//            Button::add('edit')
-//                ->slot('Edit: '.$row->id)
-//                ->id()
-//                ->class('pg-btn-white dark:ring-pg-primary-600 dark:border-pg-primary-600 dark:hover:bg-pg-primary-700 dark:ring-offset-pg-primary-800 dark:text-pg-primary-300 dark:bg-pg-primary-700')
-//                ->dispatch('edit', ['rowId' => $row->id])
-//        ];
-//    }
+    public function downloadInvoice(Booking $booking): \Symfony\Component\HttpFoundation\StreamedResponse
+    {
+        return BookingInvoice::Download($booking);
+    }
+
+    public function actions(): array
+    {
+        return [
+            Button::add('invoice')
+                ->id()
+                ->tooltip('Download Invoice')
+                ->render(function ($row) {
+                    return Blade::render(<<<HTML
+                        <x-dashboard.form.btn label="Invoice"
+                                         icon="bx bxs-download"
+                                         class="btn-warning btn-sm"
+                                         wire:click="downloadInvoice({$row->id})"
+                                         target="downloadInvoice({$row->id})"/>
+                        HTML);
+                }),
+        ];
+    }
 
     /*
     public function actionRules($row): array

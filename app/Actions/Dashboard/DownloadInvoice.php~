@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Actions\Dashboard;
+
+use App\Models\Booking;
+use Barryvdh\DomPDF\Facade\Pdf;
+
+class DownloadInvoice
+{
+    public function __invoke(Booking $booking): \Symfony\Component\HttpFoundation\StreamedResponse
+    {
+        $pdf = Pdf::loadView('dashboard.bookings.invoice', ['booking' => $booking])
+            ->setPaper('a4')
+            ->setOptions([
+                'tempDir' => public_path(),
+                'chroot' => public_path(),
+            ]);
+        return response()->streamDownload(function () use ($pdf, $booking) {
+            echo $pdf->stream();
+        }, "invoice-".$booking->code.".pdf");
+    }
+
+}
