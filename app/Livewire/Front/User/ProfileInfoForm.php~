@@ -45,6 +45,7 @@ class ProfileInfoForm extends Component
 
     public function render()
     {
-        return view('front.user.components.profile-info-form');
+        return view('front.user.components.profile-info-form')
+            ->layout('front.layout.master', ['title' => 'Profile Information']);
     }
 }

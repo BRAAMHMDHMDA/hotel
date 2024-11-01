@@ -16,7 +16,7 @@
                     <a wire:navigate href="{{route('user.change-password')}}" class="w-100">Change Password</a>
                 </li>
                 <li>
-                    <a href="#" class="w-100">Booking Details </a>
+                    <a wire:navigate href="{{route('user.bookings')}}" class="w-100">My Bookings</a>
                 </li>
                 <li>
                     <a href="#" wire:navigate class="w-100" onclick="$('#logout-form').submit()">Logout</a>

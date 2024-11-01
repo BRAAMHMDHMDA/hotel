@@ -8,7 +8,7 @@ use App\Livewire\Front\{
     Bookings\Payment,
     User\ChangePassword,
     User\ProfileInfo,
-    User\Bookings,
+//    User\Bookings,
 };
 
 
@@ -26,7 +26,7 @@ Route::middleware('auth:web')->group(function () {
     Route::view('/user/dashboard', 'front.user.dashboard')->name('user.dashboard');
     Route::get('/user/profile', ProfileInfo::class)->name('user.profile');
     Route::get('/user/change-password', ChangePassword::class)->name('user.change-password');
-    Route::get('/user/bookings', Bookings::class)->name('user.bookings');
+//    Route::get('/user/bookings', Bookings::class)->name('user.bookings');
 
     // ===================== Checkout Routes =====================================
     Route::get('checkout', Checkout::class)->name('checkout');
