@@ -57,5 +57,7 @@ Route::group([
     Route::get('bookings/create', Create_Booking::class)->name('booking.create');
     Route::get('bookings/{booking}/edit', Edit_Booking::class)->name('booking.edit');
 
+    //================= Blog Routes=================
+    Route::view('blog-categories', 'dashboard.blog-categories.index')->name('blog-categories');
 
 });
