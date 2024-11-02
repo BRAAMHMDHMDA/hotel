@@ -1,34 +1,34 @@
 <?php
 
-namespace App\Livewire\Dashboard\Team;
+namespace App\Livewire\Dashboard\Testimonials;
 
-use App\Models\Team;
-use Carbon\Carbon;
+use App\Models\Testimonial;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Blade;
 use Livewire\Attributes\On;
 use PowerComponents\LivewirePowerGrid\Button;
 use PowerComponents\LivewirePowerGrid\Column;
+use PowerComponents\LivewirePowerGrid\Detail;
 use PowerComponents\LivewirePowerGrid\Exportable;
 use PowerComponents\LivewirePowerGrid\Footer;
 use PowerComponents\LivewirePowerGrid\Header;
 use PowerComponents\LivewirePowerGrid\PowerGrid;
-use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
+use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 
-final class index extends PowerGridComponent
+final class Index extends PowerGridComponent
 {
     use WithExport;
     public string $sortField = 'created_at';
     public string $sortDirection = 'desc';
-    public string $tableName ='team';
 
     protected $listeners = ['refreshData','submitBulkDelete'];
     public function refreshData(){$this->fillData();}
 
     public function setUp(): array
     {
-        $this->showCheckBox();
+//        $this->showCheckBox();
 
         return [
             Exportable::make('export')
@@ -37,10 +37,12 @@ final class index extends PowerGridComponent
             Header::make()
                 ->showToggleColumns()
                 ->showSearchInput(),
-
             Footer::make()
                 ->showPerPage()
                 ->showRecordCount(),
+            Detail::make()
+                ->view('dashboard.testimonials.components._row-details')
+                ->showCollapseIcon(),
         ];
     }
     public function header(): array
@@ -49,19 +51,14 @@ final class index extends PowerGridComponent
             Button::add('bulk-delete')
                 ->slot('Bulk Delete')
                 ->class('btn btn-danger')
-//                ->confirm('Are You Sure you want to Delete this Members ?                           Count Selected Members: '. count($this->checkboxValues))
                 ->can((bool)$this->checkboxValues)
                 ->dispatch('show-delete-confirmation', []),
-//                ->dispatch('submitBulkDelete', []),
         ];
     }
 
     #[On('bulkDelete.{tableName}')]
     public function bulkDelete(): void
     {
-        $this->dispatch('');
-
-//        $this->js("bulkDelete()");
         if($this->checkboxValues) {
             $this->dispatch('show-delete-confirmation');
         }
@@ -70,16 +67,20 @@ final class index extends PowerGridComponent
     public function submitBulkDelete(): void
     {
         if($this->checkboxValues){
-            Team::destroy($this->checkboxValues);
+            Testimonial::destroy($this->checkboxValues);
             $this->js('window.pgBulkActions.clearAll()'); // clear the count on the interface.
         }
     }
+
     public function datasource(): Builder
     {
-        return Team::query();
+        return Testimonial::query();
     }
 
-    public function relationSearch(): array{ return []; }
+    public function relationSearch(): array
+    {
+        return [];
+    }
 
     public function fields(): PowerGridFields
     {
@@ -87,27 +88,26 @@ final class index extends PowerGridComponent
             ->add('id')
             ->add('name')
             ->add('preview' , fn ($member) => '<img class="img-thumbnail me-2" style="height: 50px;" src="'.$member->image_url.'" alt="Image">'.$member->name)
-            ->add('position')
-            ->add('facebook')
+            ->add('city')
+            ->add('message')
             ->add('created_at')
-            ->add('created_at_formatted', fn ($member) => Carbon::parse($member->created_at)->format('d/m/Y'));
+            ->add('created_at_formatted', fn ($member) => \Carbon\Carbon::parse($member->created_at)->format('d/m/Y'));
     }
 
     public function columns(): array
     {
         return [
-//            Column::make('Id', 'id'),
             Column::make('Name', 'preview', 'name')
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Position', 'position')
+            Column::make('City', 'city')
                 ->sortable()
                 ->searchable(),
 
-            Column::make('Facebook Link', 'facebook')
-                ->sortable()
-                ->searchable(),
+//            Column::make('Message', 'message')
+//                ->sortable()
+//                ->searchable(),
 
             Column::make('Created at', 'created_at_formatted', 'created_at')
                 ->sortable(),
@@ -116,10 +116,7 @@ final class index extends PowerGridComponent
         ];
     }
 
-    public function filters(): array { return []; }
-
-
-    public function actions(Team $row): array
+    public function actions(Testimonial $row): array
     {
         return [
             Button::add('edit')
@@ -127,26 +124,14 @@ final class index extends PowerGridComponent
                 ->id()
                 ->class('btn btn-sm btn-warning')
                 ->tooltip('Edit')
-                ->dispatch('editTeamMember', ['id' => $row->id]),
+                ->dispatch('editTestimonial', ['id' => $row->id]),
 
-             Button::add('delete')
-                 ->slot('<i class="bx bx-trash"></i>Delete')
-                 ->id()
-                 ->tooltip('Delete')
-                 ->class('btn btn-sm btn-danger')
-                 ->dispatch('deleteTeamMember', ['id' => $row->id])
+            Button::add('delete')
+                ->slot('<i class="bx bx-trash"></i>Delete')
+                ->id()
+                ->tooltip('Delete')
+                ->class('btn btn-sm btn-danger')
+                ->dispatch('deleteTestimonial', ['id' => $row->id])
         ];
     }
-
-    /*
-    public function actionRules($row): array
-    {
-       return [
-            // Hide button edit for ID 1
-            Rule::button('edit')
-                ->when(fn($row) => $row->id === 1)
-                ->hide(),
-        ];
-    }
-    */
 }

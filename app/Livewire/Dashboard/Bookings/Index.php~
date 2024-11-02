@@ -138,7 +138,7 @@ final class Index extends PowerGridComponent
             Filter::datepicker('created_at'),
 
             Filter::select('room_type', 'room_type_id')
-                ->dataSource(RoomType::active()->select('id', 'name')->get())
+                ->dataSource(RoomType::select('id', 'name')->get())
                 ->optionLabel('name')
                 ->optionValue('id'),
 

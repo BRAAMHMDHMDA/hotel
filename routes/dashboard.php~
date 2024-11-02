@@ -41,9 +41,6 @@ Route::group([
     //================= Team Management Route=================
     Route::view('team', 'dashboard.team.index')->name('team');
 
-    //================= Testimonials Management Route=================
-    Route::view('testimonials', 'dashboard.testimonials.index')->name('testimonials');
-
     //================= Room-Types Management Route=================
     Route::view('room-types', 'dashboard.room-types.index')->name('room-types');
     Route::get('room-types/create', Create_RoomType::class)->name('room-type.create');

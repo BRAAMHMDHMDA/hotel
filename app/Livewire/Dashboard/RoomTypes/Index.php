@@ -86,7 +86,7 @@ final class Index extends PowerGridComponent
                 ->tooltip('Edit')
                 ->render(function ($row) {
                     return Blade::render(<<<HTML
-                        <a class="btn btn-sm btn-info" wire:navigate href="{{ route('dashboard.room-type.edit', $row->id) }}"><i class="bx bx-edit-alt"></i>Edit</a>
+                        <a class="btn btn-sm btn-warning" wire:navigate href="{{ route('dashboard.room-type.edit', $row->id) }}"><i class="bx bx-edit-alt"></i>Edit</a>
                         HTML);
                 }),
             Button::add('delete')
