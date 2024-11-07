@@ -68,6 +68,16 @@
             </a>
         </li>
 
+        <li class="menu-label">Blog</li>
+        <li>
+            <a href="{{route('dashboard.blog-categories')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bx-category"></i>
+                </div>
+                <div class="menu-title">Categories</div>
+            </a>
+        </li>
+
     </ul>
     <!--end navigation-->
 </div>

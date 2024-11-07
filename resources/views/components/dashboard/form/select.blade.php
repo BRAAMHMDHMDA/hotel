@@ -8,7 +8,7 @@
     @endif
     <div>
         <select id="{{ $name }}"
-                wire:model.live="{{$name}}"
+                wire:model="{{$name}}"
                 data-allow-clear="false"
             {{ $attributes->class([
                           'form-select',

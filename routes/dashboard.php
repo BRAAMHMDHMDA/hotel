@@ -11,6 +11,9 @@ use \App\Livewire\Dashboard\{
 
     Bookings\Edit as Edit_Booking,
     Bookings\Create as Create_Booking,
+
+    BlogPosts\Create as Create_BlogPost,
+    BlogPosts\Edit as Edit_BlogPost,
 };
 
 
@@ -23,6 +26,7 @@ use \App\Livewire\Dashboard\{
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest:admin');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout')->middleware('auth:admin');
 
+Route::view('test', 'dashboard.test')->name('test');
 
 
 /**
@@ -59,5 +63,9 @@ Route::group([
 
     //================= Blog Routes=================
     Route::view('blog-categories', 'dashboard.blog-categories.index')->name('blog-categories');
+    Route::view('blog-posts', 'dashboard.blog-posts.index')->name('blog-posts');
+    Route::get('blog-posts/create', Create_BlogPost::class)->name('blog-posts.create');
+    Route::get('blog-posts/{blogPost}/edit', Edit_BlogPost::class)->name('blog-posts.edit');
+
 
 });

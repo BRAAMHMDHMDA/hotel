@@ -8,7 +8,8 @@
 <script src="{{ asset('dash_assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}" data-navigate-once></script>
 <script src="{{ asset('dash_assets/plugins/notifications/js/notifications.min.js') }}" data-navigate-once></script>
 <script src="{{ asset('dash_assets/plugins/notifications/js/lobibox.min.js') }}"  data-navigate-once></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr" data-navigate-once></script>
+<script src="{{ asset('dash_assets/ckeditor/ckeditor.js') }}" data-navigate-once></script>
 
 <!--app JS-->
 <script src="{{ asset('dash_assets/js/app.js') }}"></script>

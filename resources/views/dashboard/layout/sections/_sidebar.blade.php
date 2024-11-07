@@ -77,6 +77,14 @@
                 <div class="menu-title">Categories</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('dashboard.blog-posts')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bxl-blogger"></i>
+                </div>
+                <div class="menu-title">Posts</div>
+            </a>
+        </li>
 
     </ul>
     <!--end navigation-->

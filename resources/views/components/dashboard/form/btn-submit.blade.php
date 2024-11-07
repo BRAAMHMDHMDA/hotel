@@ -2,8 +2,9 @@
     'target' => 'submit',
     'label' => 'Submit',
     'icon' => 'bx bx-save',
+    'type' => 'submit',
 ])
-<button type="submit" wire:loading.attr="disabled"
+<button type="{{$type}}" wire:loading.attr="disabled"
     {{ $attributes->class(['btn btn-primary d-flex align-items-center'])}}
 >
     <span class="d-flex align-items-center" >
