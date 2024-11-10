@@ -16,7 +16,7 @@
                                 <div class="row align-items-center">
                                     <div class="col-lg-5 col-md-4 p-0">
                                         <div class="blog-img">
-                                            <a href="#">
+                                            <a wire:navigate href="{{route('post.details', $post->slug)}}">
                                                 <img src="{{$post->image_url}}" alt="Images">
                                             </a>
                                         </div>
@@ -26,10 +26,10 @@
                                         <div class="blog-content">
                                             <span>{{$post->created_at->format('M d, Y')}}</span>
                                             <h3>
-                                                <a href="blog-details.html">{{$post->title}}</a>
+                                                <a wire:navigate href="{{route('post.details', $post->slug)}}">{{$post->title}}</a>
                                             </h3>
                                             <p>{{$post->short_description}}</p>
-                                            <a href="blog-details.html" class="read-btn">
+                                            <a wire:navigate href="{{route('post.details', $post->slug)}}" class="read-btn">
                                                 Read More
                                             </a>
                                         </div>
@@ -41,17 +41,7 @@
 
                     <div class="col-lg-12 col-md-12">
                         <div class="pagination-area">
-                            <a href="#" class="prev page-numbers">
-                                <i class='bx bx-chevrons-left'></i>
-                            </a>
-
-                            <span class="page-numbers current" aria-current="page">1</span>
-                            <a href="#" class="page-numbers">2</a>
-                            <a href="#" class="page-numbers">3</a>
-
-                            <a href="#" class="next page-numbers">
-                                <i class='bx bx-chevrons-right'></i>
-                            </a>
+                            {{$posts->links('front.layout.sections._pagination')}}
                         </div>
                     </div>
                 </div>

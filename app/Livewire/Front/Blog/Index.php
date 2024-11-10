@@ -25,7 +25,7 @@ class Index extends Component
         if ($this->category) {
             return $this->category->posts()->published()->latest()->paginate(5);
         }
-        return BlogPost::published()->latest()->paginate(5);
+        return BlogPost::published()->latest()->paginate(1);
     }
 
     public function render(): View

@@ -3,8 +3,8 @@
     <div class="widget-popular-post">
         @foreach($posts as $post)
             <article class="item">
-                <a href="#" class="thumb">
-                    <img src="{{$post->image_url}}" class="full-image cover bg1" />
+                <a wire:navigate href="{{route('post.details', $post->slug)}}" class="thumb">
+                    <img src="{{$post->image_url}}" class="full-image cover bg1 img-fluid rounded" />
                 </a>
                 <div class="info">
                     <h4 class="title-text">
