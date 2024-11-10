@@ -38,16 +38,20 @@ class BlogPost extends Model
         static::creating(function ($post) {
             $post->created_by = Auth::guard('admin')->user()->id;
         });
+        static::updating(function ($post) {
+            $post->title = Str::title($post->title);
+            $post->slug = Str::slug($post->title);
+        });
     }
     public function scopePublished(Builder $builder): void
     {
         $builder->where('status', '=', self::STATUS_PUBLISHED);
     }
-    public function setTitleAttribute($value): void
-    {
-        $this->attributes['slug'] = Str::slug($value);
-        $this->attributes['title'] = Str::title($value);
-    }
+//    public function setTitleAttribute($value): void
+//    {
+//        $this->attributes['slug'] = Str::slug($value);
+//        $this->attributes['title'] = Str::title($value);
+//    }
 
     public function category(): BelongsTo
     {

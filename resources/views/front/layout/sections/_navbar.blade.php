@@ -145,27 +145,9 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a wire:navigate href="{{route('blog')}}" class="nav-link">
                                 Blog
-                                <i class='bx bx-chevron-down'></i>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Blog Style One
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Blog Style Two
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#" class="nav-link">
-                                        Blog Details
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="nav-item">

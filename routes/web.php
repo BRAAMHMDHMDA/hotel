@@ -4,11 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Front\{
     Rooms\Index as Rooms,
     Rooms\Show as Show_Room,
+
     Bookings\Checkout,
     Bookings\Payment,
+
     User\ChangePassword,
     User\ProfileInfo,
     User\Bookings,
+
+    Blog\Index as Blog,
+    Blog\PostDetails,
+
 };
 
 
@@ -20,6 +26,11 @@ Route::view('home', 'front.home.index')->name('home');
 // ===================== Rooms Routes =====================================
 Route::get('rooms', Rooms::class)->name('rooms');
 Route::get('rooms/{slug}', Show_Room::class)->name('room.show');
+
+// ===================== Blog Routes =====================================
+Route::get('blog/{category:slug?}', Blog::class)->name('blog');
+Route::get('blog/posts/{post:slug}', PostDetails::class)->name('post.details');
+
 
 Route::middleware('auth:web')->group(function () {
     // ===================== User Routes =====================================

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -20,5 +21,10 @@ class BlogCategory extends Model
     {
         $this->attributes['slug'] = Str::slug($value);
         $this->attributes['name'] = Str::title($value);
+    }
+    //posts
+    public function posts(): HasMany
+    {
+        return $this->hasMany(BlogPost::class);
     }
 }

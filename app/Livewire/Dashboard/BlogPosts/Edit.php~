@@ -39,6 +39,7 @@ class Edit extends Component
         $this->blogPost->update($data);
 
         $this->redirectRoute('dashboard.blog-posts', navigate: true);
+        $this->reset();
         $this->dispatch('notify_success', "Blog-Post Updated Successfully");
     }
 

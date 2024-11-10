@@ -56,7 +56,7 @@ final class Index extends PowerGridComponent
         return PowerGrid::fields()
             ->add('id')
             ->add('title')
-            ->add('preview' , fn ($post) => '<img class="img-thumbnail me-2" style="height: 50px;" src="'.$post->image_url.'" alt="Image"><a target="_blank" href="/blog/posts/'.$post->slug.'">'.$post->title.'</a>')
+            ->add('preview' , fn ($post) => '<img class="img-thumbnail me-2" style="height: 50px;" src="'.$post->image_url.'" alt="Image"><a wire:navigate target="_blank" href="/blog/posts/'.$post->slug.'">'.$post->title.'</a>')
             ->add('image_path')
             ->add('blog_category_id')
             ->add('blog_category' , fn ($post) => $post->category->name)
