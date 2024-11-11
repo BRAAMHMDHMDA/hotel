@@ -62,10 +62,12 @@ Route::group([
     Route::get('bookings/{booking}/edit', Edit_Booking::class)->name('booking.edit');
 
     //================= Blog Routes=================
-    Route::view('blog-categories', 'dashboard.blog-categories.index')->name('blog-categories');
-    Route::view('blog-posts', 'dashboard.blog-posts.index')->name('blog-posts');
-    Route::get('blog-posts/create', Create_BlogPost::class)->name('blog-posts.create');
-    Route::get('blog-posts/{blogPost}/edit', Edit_BlogPost::class)->name('blog-posts.edit');
+    Route::view('blog/categories', 'dashboard.blog-categories.index')->name('blog-categories');
 
+    Route::view('blog/posts', 'dashboard.blog-posts.index')->name('blog-posts');
+    Route::get('blog/posts/create', Create_BlogPost::class)->name('blog-posts.create');
+    Route::get('blog/posts/{blogPost}/edit', Edit_BlogPost::class)->name('blog-posts.edit');
+
+    Route::view('blog/comments', 'dashboard.blog-comments.index')->name('blog-comments');
 
 });

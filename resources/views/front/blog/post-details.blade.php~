@@ -39,7 +39,7 @@
                             <ul>
                                 @foreach($post->comments as $comment)
                                     <li>
-                                        <img src="{{$comment->user->image_url}}" alt="Image" width="60px" height="60px">
+                                        <img src="{{$comment->user->image_url}}" alt="Image" width="60px" height="60px" class="img-thumbnail">
                                         <h3>{{$comment->user->full_name}}</h3>
                                         <span>
                                             {{ $comment->created_at->diffForHumans() }}

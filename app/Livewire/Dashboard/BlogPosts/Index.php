@@ -92,18 +92,6 @@ final class Index extends PowerGridComponent
         ];
     }
 
-    public function filters(): array
-    {
-        return [
-        ];
-    }
-
-    #[\Livewire\Attributes\On('edit')]
-    public function edit($rowId): void
-    {
-        $this->js('alert('.$rowId.')');
-    }
-
     public function actions(BlogPost $row): array
     {
         return [

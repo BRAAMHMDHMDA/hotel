@@ -6,6 +6,7 @@ use App\Traits\HasImage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -38,20 +39,16 @@ class BlogPost extends Model
         static::creating(function ($post) {
             $post->created_by = Auth::guard('admin')->user()->id;
         });
-        static::updating(function ($post) {
-            $post->title = Str::title($post->title);
-            $post->slug = Str::slug($post->title);
-        });
     }
     public function scopePublished(Builder $builder): void
     {
         $builder->where('status', '=', self::STATUS_PUBLISHED);
     }
-//    public function setTitleAttribute($value): void
-//    {
-//        $this->attributes['slug'] = Str::slug($value);
-//        $this->attributes['title'] = Str::title($value);
-//    }
+    public function setTitleAttribute($value): void
+    {
+        $this->attributes['slug'] = Str::slug($value);
+        $this->attributes['title'] = Str::title($value);
+    }
 
     public function category(): BelongsTo
     {
@@ -62,5 +59,10 @@ class BlogPost extends Model
     {
         return $this->belongsTo(Admin::class, 'created_by');
     }
+
+     public function comments(): HasMany
+     {
+        return $this->hasMany(Comment::class)->active();
+     }
 
 }

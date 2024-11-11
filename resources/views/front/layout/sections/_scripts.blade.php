@@ -26,6 +26,11 @@
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script>
+    // Toastr event success
+    $(document).on('notify_success', function(e) {
+        toastr.success(e.detail[0]);
+    });
+
     @if(Session::has('success'))
     toastr.success(" {{ Session::get('success') }} ");
     @endif

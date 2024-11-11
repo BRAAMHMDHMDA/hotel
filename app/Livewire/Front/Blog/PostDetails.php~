@@ -14,7 +14,8 @@ class PostDetails extends Component
 
     public function mount(BlogPost $post): void
     {
-        $this->post = $post->load('comments');
+        $post->load('comments');
+        $this->post = $post;
     }
 
     public function post_comment(): void
@@ -24,7 +25,7 @@ class PostDetails extends Component
             'content' => $this->comment,
             'post_id' => $this->post->id,
         ]);
-        $this->reset('comment');
+        $this->comment = null;
         $this->dispatch('notify_success', 'Comment Added Successfully, Please Wait For Admin Approval');
     }
 

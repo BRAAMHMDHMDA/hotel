@@ -6,6 +6,7 @@ use App\Traits\HasImage;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -58,5 +59,10 @@ class BlogPost extends Model
     {
         return $this->belongsTo(Admin::class, 'created_by');
     }
+
+     public function comments(): HasMany
+     {
+        return $this->hasMany(Comment::class, 'post_id')->active();
+     }
 
 }

@@ -85,6 +85,14 @@
                 <div class="menu-title">Posts</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('dashboard.blog-comments')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bx-comment"></i>
+                </div>
+                <div class="menu-title">Comments</div>
+            </a>
+        </li>
 
     </ul>
     <!--end navigation-->
