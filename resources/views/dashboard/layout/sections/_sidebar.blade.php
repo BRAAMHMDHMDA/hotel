@@ -40,6 +40,14 @@
                 <div class="menu-title">Testimonials</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('dashboard.gallery')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bx-images"></i>
+                </div>
+                <div class="menu-title">Gallery</div>
+            </a>
+        </li>
 
         <li class="menu-label">Rooms</li>
         <li>

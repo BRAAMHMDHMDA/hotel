@@ -70,4 +70,7 @@ Route::group([
 
     Route::view('blog/comments', 'dashboard.blog-comments.index')->name('blog-comments');
 
+    //================= Gallery Management Route=================
+    Route::view('gallery', 'dashboard.gallery.index')->name('gallery');
+
 });

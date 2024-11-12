@@ -21,6 +21,11 @@ class Create extends Component
     {
         return RoomType::rules();
     }
+    public function removeImage($index)
+    {
+        array_splice($this->images, $index, 1);
+    }
+
 
     public function submit()
     {

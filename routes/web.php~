@@ -49,7 +49,7 @@ Route::middleware('auth:web')->group(function () {
         ->name('stripe.return');
 
     // ===================== Gallery Routes =====================================
-    Route::get('gallery', Gallery::class)->name('gallery');
+    Route::get('gallery', Gallery::class)->name('blog');
 
 
 
