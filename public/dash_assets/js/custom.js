@@ -11,8 +11,12 @@ document.addEventListener("deleteModalToggle", event => {
     $('#delete-modal').modal('toggle');
 });
 // {{-- Hide Delete Modal After Submit --}}
-document.addEventListener("showModalToggle", event => {
-    $('#show-modal').modal('toggle');
+document.addEventListener("showModal", event => {
+    $('#show-modal').modal('show');
+});
+
+document.addEventListener("hideModal", event => {
+    $('#show-modal').modal('hide');
 });
 
 document.addEventListener("notify_success", event => {

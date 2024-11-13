@@ -48,6 +48,14 @@
                 <div class="menu-title">Gallery</div>
             </a>
         </li>
+        <li>
+            <a href="{{route('dashboard.contacts')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bxs-message-rounded-dots"></i>
+                </div>
+                <div class="menu-title">Contacts</div>
+            </a>
+        </li>
 
         <li class="menu-label">Rooms</li>
         <li>

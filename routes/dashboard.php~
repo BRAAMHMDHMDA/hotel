@@ -73,7 +73,4 @@ Route::group([
     //================= Gallery Management Route=================
     Route::view('gallery', 'dashboard.gallery.index')->name('gallery');
 
-    //================= Contact Management Route=================
-    Route::view('contacts', 'dashboard.contacts.index')->name('contacts');
-
 });

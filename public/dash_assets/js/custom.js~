@@ -11,8 +11,13 @@ document.addEventListener("deleteModalToggle", event => {
     $('#delete-modal').modal('toggle');
 });
 // {{-- Hide Delete Modal After Submit --}}
-document.addEventListener("showModalToggle", event => {
-    $('#show-modal').modal('toggle');
+document.addEventListener("showModal", event => {
+    $('#show-modal').modal('show');
+
+    if (!$('#show-modal').hasClass('show')) {  // Check if modal is not already open
+    }});
+document.addEventListener("hideModal", event => {
+    $('#show-modal').modal('hide');
 });
 
 document.addEventListener("notify_success", event => {
@@ -36,8 +41,8 @@ document.addEventListener("notify_error", event => {
         icon: 'bx bx-x-circle',
         continueDelayOnInactiveTab: false,
         position: 'top right',
-        msg: 'Lorem ipsum dolor sit amet hears farmer indemnity inherent.'
-    }); 
+        msg: event.detail[0],
+    });
 });
 $(document).ready(function () {
     // Listen for the 'show-delete-confirmation' event

@@ -1,24 +1,24 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
+
 use App\Livewire\Front\{
-    Rooms\Index as Rooms,
-    Rooms\Show as Show_Room,
+    Blog\Index as Blog,
+    Blog\PostDetails,
 
     Bookings\Checkout,
     Bookings\Payment,
 
+    Rooms\Index as Rooms,
+    Rooms\Show as Show_Room,
+
+    User\Bookings,
     User\ChangePassword,
     User\ProfileInfo,
-    User\Bookings,
 
-    Blog\Index as Blog,
-    Blog\PostDetails,
-
-    Gallery\Index as Gallery,
+    Pages\Gallery,
+    Pages\Contact,
 
 };
-
 
 
 // ===================== Home Routes =====================================
@@ -48,11 +48,12 @@ Route::middleware('auth:web')->group(function () {
     Route::get('bookings/{booking}/pay/stripe/callback', \App\Actions\Front\CompletionStripePayment::class)
         ->name('stripe.return');
 
-    // ===================== Gallery Routes =====================================
-    Route::get('gallery', Gallery::class)->name('blog');
+    // ===================== Gallery Route =====================================
+    Route::get('gallery', Gallery::class)->name('gallery');
 
-
-
+    // ===================== Contact Route =====================================
+    Route::get('contact', Contact::class)->name('contact');
+    
 
 });
 
