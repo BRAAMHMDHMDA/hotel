@@ -25,6 +25,40 @@
 
         <li class="menu-label">Sections</li>
         <li>
+            <a href="javascript:;" class="has-arrow">
+                <div class="parent-icon"><i class="bx bxl-blogger"></i>
+                </div>
+                <div class="menu-title">Blog</div>
+            </a>
+            <ul>
+                <li>
+                    <a href="{{route('dashboard.blog-categories')}}" wire:navigate>
+                        <div class="parent-icon">
+                            <i class="bx bx-category"></i>
+                        </div>
+                        <div class="menu-title">Categories</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('dashboard.blog-posts')}}" wire:navigate>
+                        <div class="parent-icon">
+                            <i class="bx bxl-blogger"></i>
+                        </div>
+                        <div class="menu-title">Posts</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('dashboard.blog-comments')}}" wire:navigate>
+                        <div class="parent-icon">
+                            <i class="bx bx-comment"></i>
+                        </div>
+                        <div class="menu-title">Comments</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
             <a href="{{route('dashboard.team')}}" wire:navigate>
                 <div class="parent-icon">
                     <i class="bx bxs-user-rectangle"></i>
@@ -84,29 +118,39 @@
             </a>
         </li>
 
-        <li class="menu-label">Blog</li>
+{{--        <li class="menu-label">Blog</li>--}}
+{{--        <li>--}}
+{{--            <a href="{{route('dashboard.blog-categories')}}" wire:navigate>--}}
+{{--                <div class="parent-icon">--}}
+{{--                    <i class="bx bx-category"></i>--}}
+{{--                </div>--}}
+{{--                <div class="menu-title">Categories</div>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li>--}}
+{{--            <a href="{{route('dashboard.blog-posts')}}" wire:navigate>--}}
+{{--                <div class="parent-icon">--}}
+{{--                    <i class="bx bxl-blogger"></i>--}}
+{{--                </div>--}}
+{{--                <div class="menu-title">Posts</div>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+{{--        <li>--}}
+{{--            <a href="{{route('dashboard.blog-comments')}}" wire:navigate>--}}
+{{--                <div class="parent-icon">--}}
+{{--                    <i class="bx bx-comment"></i>--}}
+{{--                </div>--}}
+{{--                <div class="menu-title">Comments</div>--}}
+{{--            </a>--}}
+{{--        </li>--}}
+
+        <li class="menu-label">App</li>
         <li>
-            <a href="{{route('dashboard.blog-categories')}}" wire:navigate>
+            <a href="{{route('dashboard.settings')}}" wire:navigate>
                 <div class="parent-icon">
-                    <i class="bx bx-category"></i>
+                    <i class="bx bx-cog"></i>
                 </div>
-                <div class="menu-title">Categories</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{route('dashboard.blog-posts')}}" wire:navigate>
-                <div class="parent-icon">
-                    <i class="bx bxl-blogger"></i>
-                </div>
-                <div class="menu-title">Posts</div>
-            </a>
-        </li>
-        <li>
-            <a href="{{route('dashboard.blog-comments')}}" wire:navigate>
-                <div class="parent-icon">
-                    <i class="bx bx-comment"></i>
-                </div>
-                <div class="menu-title">Comments</div>
+                <div class="menu-title">Settings</div>
             </a>
         </li>
 

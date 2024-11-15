@@ -14,6 +14,9 @@ use \App\Livewire\Dashboard\{
 
     BlogPosts\Create as Create_BlogPost,
     BlogPosts\Edit as Edit_BlogPost,
+
+    Settings\Index as Settings,
+
 };
 
 
@@ -75,5 +78,8 @@ Route::group([
 
     //================= Contact Management Route=================
     Route::view('contacts', 'dashboard.contacts.index')->name('contacts');
+
+    //================= Settings Management Route=================
+    Route::get('settings/{group?}', Settings::class)->name('settings');
 
 });

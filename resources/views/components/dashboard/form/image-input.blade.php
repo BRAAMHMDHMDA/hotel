@@ -7,7 +7,7 @@
     ])
 
 
-    <label for="{{ $name }}" class="form-label">{{ $label }}</label>
+    <label for="{{ $name }}" class="form-label">{!! $label !!} </label>
 
     <input type="file" id="{{ $name }}" placeholder="Enter {{$label}}"
            wire:model="{{$name}}"
