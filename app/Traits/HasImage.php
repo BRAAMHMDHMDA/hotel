@@ -43,7 +43,7 @@ trait HasImage
     {
         $path = parse_url($old_image_url, PHP_URL_PATH);
         $diskPath = str_replace('/storage/media/', '', $path);
-        if (Storage::disk('media')->exists($diskPath)) {
+        if (Storage::disk('media')->exists($diskPath) && $diskPath != 'no_image.jpg') {
             return Storage::disk('media')->delete($diskPath);
         } else {
             return false;
@@ -65,7 +65,7 @@ trait HasImage
     public function getImageUrlAttribute(): string
     {
         if (!$this->image_path){
-            return asset('storage/media/no-image.png');
+            return asset('storage/media/no_image.jpg');
 
         }elseif (Str::startsWith($this->image_path, ['http://', 'https://'])) {
             return $this->image_path;

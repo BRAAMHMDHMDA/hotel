@@ -146,6 +146,15 @@
 
         <li class="menu-label">App</li>
         <li>
+            <a href="{{route('dashboard.admins')}}" wire:navigate>
+                <div class="parent-icon">
+                    <i class="bx bx-user"></i>
+                </div>
+                <div class="menu-title">Admins</div>
+            </a>
+        </li>
+
+        <li>
             <a href="{{route('dashboard.settings')}}" wire:navigate>
                 <div class="parent-icon">
                     <i class="bx bx-cog"></i>
@@ -153,6 +162,8 @@
                 <div class="menu-title">Settings</div>
             </a>
         </li>
+
+
 
     </ul>
     <!--end navigation-->

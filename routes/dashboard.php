@@ -82,4 +82,7 @@ Route::group([
     //================= Settings Management Route=================
     Route::get('settings/{group?}', Settings::class)->name('settings');
 
+    //================= Admins Management Route=================
+    Route::view('admins', 'dashboard.admins.index')->name('admins');
+
 });
