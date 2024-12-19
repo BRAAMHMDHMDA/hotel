@@ -63,6 +63,7 @@ class Index extends Component
 
     public function submit(): void
     {
+        $this->authorize('setting-edit');
         foreach ($this->settings as $name => $setting) {
             $input = str_replace('.', '_', $name);
 
@@ -96,6 +97,7 @@ class Index extends Component
 
     public function render(): View
     {
+        $this->authorize('setting-list');
         return view('dashboard.settings.index')->layout('dashboard.layout.dashboard-layout');
     }
 

@@ -1,12 +1,14 @@
 <x-dashboard.dashboard-layout title="Bookings">
 
     <x-dashboard.breadcrumb mainTitle="Bookings Management">
+        @can('booking-create')
             <div class="ms-auto">
                 <a class="btn btn-primary radius-30" wire:navigate href="{{ route('dashboard.booking.create') }}">
                     <i class="bx bxs-plus-square"></i>
                     <span>Add New Booking</span>
                 </a>
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">

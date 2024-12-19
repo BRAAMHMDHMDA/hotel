@@ -24,7 +24,14 @@ final class Index extends PowerGridComponent
     public string $sortField = 'created_at';
     public string $sortDirection = 'desc';
 
-    protected $listeners = ['refreshData','submitBulkDelete'];
+    protected function queryString(): array
+    {
+        return [
+            'search' => ['except' => ''],
+        ];
+    }
+
+    #[On('refreshData')]
     public function refreshData(){$this->fillData();}
 
     public function setUp(): array
@@ -65,6 +72,7 @@ final class Index extends PowerGridComponent
         }
     }
 
+    #[On('submitBulkDelete')]
     public function submitBulkDelete(): void
     {
         if($this->checkboxValues){
@@ -75,12 +83,16 @@ final class Index extends PowerGridComponent
 
     public function datasource(): Builder
     {
-        return Admin::query();
+        return Admin::with('roles');
     }
 
     public function relationSearch(): array
     {
-        return [];
+        return [
+            'roles' => [
+                'name' // Allows searching within the roles' `name` field
+            ]
+        ];
     }
 
     public function fields(): PowerGridFields
@@ -90,6 +102,10 @@ final class Index extends PowerGridComponent
             ->add('name')
             ->add('preview' , fn ($member) => '<img class="img-thumbnail me-2" style="height: 50px;" src="'.$member->image_url.'" alt="Image">'.$member->name)
             ->add('email')
+            ->add('roles')
+            ->add('roles_list', fn ($member) =>
+                '<ul style="padding-top:10px">' . $member->roles->map(fn ($role) => '<li>' . e($role->name) . '</li>')->join('') . '</ul>'
+            )
             ->add('created_at')
             ->add('created_at_formatted', fn ($member) => \Carbon\Carbon::parse($member->created_at)->format('d/m/Y'));
 
@@ -105,6 +121,9 @@ final class Index extends PowerGridComponent
 
             Column::make('Email', 'email')
                 ->sortable()
+                ->searchable(),
+
+            Column::make('Roles', 'roles_list', 'roles')
                 ->searchable(),
 
             Column::make('Created at', 'created_at_formatted', 'created_at')

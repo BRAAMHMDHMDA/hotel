@@ -30,6 +30,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('testimonial-list');
         return view('dashboard.testimonials.create');
     }
 }

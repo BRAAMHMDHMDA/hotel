@@ -31,6 +31,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('team-list');
         return view('dashboard.team.create');
     }
 }

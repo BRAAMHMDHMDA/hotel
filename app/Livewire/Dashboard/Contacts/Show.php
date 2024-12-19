@@ -23,6 +23,7 @@ class Show extends Component
 
     public function render()
     {
+        $this->authorize('contact-show');
         return view('dashboard.contacts.show');
     }
 }

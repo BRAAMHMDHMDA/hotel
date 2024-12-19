@@ -44,6 +44,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('blog_post-edit');
         return view('dashboard.blog-posts.edit')->layout('dashboard.layout.dashboard-layout');
     }
 }

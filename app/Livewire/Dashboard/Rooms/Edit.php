@@ -42,12 +42,9 @@ class Edit extends Component
         $this->dispatch('notify_success', "(Room $this->number) Updated Successfully");
     }
 
-
-
-
-
     public function render()
     {
+        $this->authorize('room-edit');
         return view('dashboard.rooms.edit');
     }
 }

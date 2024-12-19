@@ -26,6 +26,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('blog_category-list');
         return view('dashboard.blog-categories.create');
     }
 }

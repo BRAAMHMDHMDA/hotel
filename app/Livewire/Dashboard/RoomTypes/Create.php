@@ -57,6 +57,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('room_type-create');
         return view('dashboard.room-types.create')->layout('dashboard.layout.dashboard-layout');
     }
 }

@@ -1,12 +1,14 @@
 <x-dashboard.dashboard-layout title="Blog Posts">
 
     <x-dashboard.breadcrumb mainTitle="Blog Posts Management">
+        @can('blog_post-create')
             <div class="ms-auto">
                 <a wire:navigate href="{{ route('dashboard.blog-posts.create') }}" class="btn btn-primary radius-30">
                     <i class="bx bxs-plus-square"></i>
                     <span>Add New</span>
                 </a>
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">
@@ -15,7 +17,10 @@
         </div>
     </div>
 {{--    <livewire:dashboard.blog-posts.edit />--}}
-    <livewire:dashboard.blog-posts.delete />
+
+    @can('blog_post-delete')
+        <livewire:dashboard.blog-posts.delete />
+    @endcan
 
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>
@@ -33,7 +38,6 @@
             </div>
         </form>
     </x-dashboard.form.modal>
-
 
 </x-dashboard.dashboard-layout>
 

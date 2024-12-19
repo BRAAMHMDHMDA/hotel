@@ -1,6 +1,7 @@
 <x-dashboard.dashboard-layout title="Blog Categories">
 
     <x-dashboard.breadcrumb mainTitle="Blog Categories Management">
+        @can('blog_category-list')
             <div class="ms-auto">
                 <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
                     <i class="bx bxs-plus-square"></i>
@@ -8,6 +9,7 @@
                 </button>
                 <livewire:dashboard.blog-categories.create />
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">
@@ -15,8 +17,12 @@
             <livewire:dashboard.blog-categories.index />
         </div>
     </div>
+    @can('blog_category-edit')
     <livewire:dashboard.blog-categories.edit />
-    <livewire:dashboard.blog-categories.delete />
+    @endcan
+    @can('blog_category-delete')
+        <livewire:dashboard.blog-categories.delete />
+    @endcan
 
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>

@@ -32,6 +32,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('room-create');
         return view('dashboard.rooms.create');
     }
 }

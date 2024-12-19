@@ -8,7 +8,7 @@
 
 <label for="{{ $name }}" class="form-label">{!! $label !!} </label>
 <input type="{{$type}}" id="{{ $name }}" placeholder="Enter {{$label}}"
-        wire:model.live="{{$name}}" value="{{ old($name, $value) }}"
+        wire:model="{{$name}}" value="{{ old($name, $value) }}"
         {{ $attributes->class([
                           'form-control',
                           'is-invalid' => $errors->has($name)

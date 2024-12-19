@@ -97,6 +97,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('booking-edit');
         return view('dashboard.bookings.edit')
             ->layout('dashboard.layout.dashboard-layout', ['title' => 'Edit Booking']);
     }

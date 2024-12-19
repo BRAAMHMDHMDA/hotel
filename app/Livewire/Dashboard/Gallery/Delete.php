@@ -26,6 +26,7 @@ class Delete extends Component
     }
     public function render(): View
     {
+        $this->authorize('gallery-delete');
         return view('dashboard.gallery.delete');
     }
 }

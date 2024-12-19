@@ -1,6 +1,7 @@
 <x-dashboard.dashboard-layout title="Testimonials">
 
     <x-dashboard.breadcrumb mainTitle="Testimonials Management">
+        @can('Testimonial-create')
             <div class="ms-auto">
                 <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
                     <i class="bx bxs-plus-square"></i>
@@ -8,6 +9,7 @@
                 </button>
                 <livewire:dashboard.testimonials.create />
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">
@@ -26,8 +28,13 @@
             <livewire:dashboard.testimonials.index />
         </div>
     </div>
+
+    @can('Testimonial-edit')
     <livewire:dashboard.testimonials.edit />
+    @endcan
+    @can('Testimonial-delete')
     <livewire:dashboard.testimonials.delete />
+    @endcan
 
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>

@@ -1,13 +1,15 @@
 <x-dashboard.dashboard-layout title="Admins">
 
     <x-dashboard.breadcrumb mainTitle="Admins">
-        <div class="ms-auto">
-            <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
-                <i class="bx bxs-plus-square"></i>
-                <span>Add New Admin</span>
-            </button>
-            <livewire:dashboard.admins.create />
-        </div>
+        @can('admin-create')
+            <div class="ms-auto">
+                <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
+                    <i class="bx bxs-plus-square"></i>
+                    <span>Add New Admin</span>
+                </button>
+                <livewire:dashboard.admins.create />
+            </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">
@@ -15,8 +17,12 @@
             <livewire:dashboard.admins.index />
         </div>
     </div>
-    <livewire:dashboard.admins.delete />
-    <livewire:dashboard.admins.edit />
+    @can('admin-delete')
+        <livewire:dashboard.admins.delete />
+    @endcan
+    @can('admin-edit')
+        <livewire:dashboard.admins.edit />
+    @endcan
 
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>

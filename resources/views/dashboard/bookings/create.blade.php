@@ -1,7 +1,7 @@
 <div>
 
     <x-dashboard.breadcrumb mainTitle="Create New Booking" />
-
+{{$errors}}
 
     <div class="card">
         <div class="card-body mt-3">

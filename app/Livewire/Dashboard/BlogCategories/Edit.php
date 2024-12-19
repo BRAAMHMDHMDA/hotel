@@ -38,6 +38,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('blog_category-edit');
         return view('dashboard.blog-categories.edit');
     }
 }

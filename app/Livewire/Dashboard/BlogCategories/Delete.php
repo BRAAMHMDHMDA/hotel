@@ -27,6 +27,7 @@ class Delete extends Component
 
     public function render()
     {
+        $this->authorize('blog_category-delete');
         return view('dashboard.blog-categories.delete');
     }
 }

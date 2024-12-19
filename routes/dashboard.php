@@ -17,6 +17,8 @@ use \App\Livewire\Dashboard\{
 
     Settings\Index as Settings,
 
+    Roles\Index as Roles,
+
 };
 
 
@@ -29,7 +31,7 @@ use \App\Livewire\Dashboard\{
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])->name('login')->middleware('guest:admin');
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout')->middleware('auth:admin');
 
-Route::view('test', 'dashboard.test')->name('test');
+//Route::view('test', 'dashboard.test')->name('test');
 
 
 /**
@@ -46,43 +48,46 @@ Route::group([
     Route::redirect('/', '/dashboard/home');
 
     //================= Team Management Route=================
-    Route::view('team', 'dashboard.team.index')->name('team');
+    Route::view('team', 'dashboard.team.index')->name('team')->middleware('permission:team-list');
 
     //================= Testimonials Management Route=================
-    Route::view('testimonials', 'dashboard.testimonials.index')->name('testimonials');
+    Route::view('testimonials', 'dashboard.testimonials.index')->name('testimonials')->middleware('permission:testimonials-list');
 
     //================= Room-Types Management Route=================
-    Route::view('room-types', 'dashboard.room-types.index')->name('room-types');
+    Route::view('room-types', 'dashboard.room-types.index')->name('room-types')->middleware('permission:room_types-list');
     Route::get('room-types/create', Create_RoomType::class)->name('room-type.create');
     Route::get('room-types/{roomType}/edit', Edit_RoomType::class)->name('room-type.edit');
 
     //================= Rooms Management Route=================
-    Route::view('rooms', 'dashboard.rooms.index')->name('rooms');
+    Route::view('rooms', 'dashboard.rooms.index')->name('rooms')->middleware('permission:rooms-list');
 
     //================= Bookings Management Route=================
-    Route::view('bookings', 'dashboard.bookings.index')->name('bookings');
+    Route::view('bookings', 'dashboard.bookings.index')->name('bookings')->middleware('permission:bookings-list');
     Route::get('bookings/create', Create_Booking::class)->name('booking.create');
     Route::get('bookings/{booking}/edit', Edit_Booking::class)->name('booking.edit');
 
     //================= Blog Routes=================
     Route::view('blog/categories', 'dashboard.blog-categories.index')->name('blog-categories');
 
-    Route::view('blog/posts', 'dashboard.blog-posts.index')->name('blog-posts');
+    Route::view('blog/posts', 'dashboard.blog-posts.index')->name('blog-posts')->middleware('permission:blog_posts-list');
     Route::get('blog/posts/create', Create_BlogPost::class)->name('blog-posts.create');
     Route::get('blog/posts/{blogPost}/edit', Edit_BlogPost::class)->name('blog-posts.edit');
 
-    Route::view('blog/comments', 'dashboard.blog-comments.index')->name('blog-comments');
+    Route::view('blog/comments', 'dashboard.blog-comments.index')->name('blog-comments')->middleware('permission:blog_comments-list');
 
     //================= Gallery Management Route=================
-    Route::view('gallery', 'dashboard.gallery.index')->name('gallery');
+    Route::view('gallery', 'dashboard.gallery.index')->name('gallery')->middleware('permission:gallery-list');
 
     //================= Contact Management Route=================
-    Route::view('contacts', 'dashboard.contacts.index')->name('contacts');
+    Route::view('contacts', 'dashboard.contacts.index')->name('contacts')->middleware('permission:contacts-list');
 
     //================= Settings Management Route=================
     Route::get('settings/{group?}', Settings::class)->name('settings');
 
     //================= Admins Management Route=================
-    Route::view('admins', 'dashboard.admins.index')->name('admins');
+    Route::view('admins', 'dashboard.admins.index')->name('admins')->middleware('permission:admin-list');
+
+    //================= Roles Management Route=================
+    Route::get('roles', Roles::class)->name('roles');
 
 });

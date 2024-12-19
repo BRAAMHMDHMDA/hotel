@@ -8,8 +8,10 @@
             <livewire:dashboard.blog-comments.index />
         </div>
     </div>
-    <livewire:dashboard.blog-comments.delete />
 
+    @can('blog_comments-delete')
+        <livewire:dashboard.blog-comments.delete />
+    @endcan
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>
             <div class="modal-body" id="confirmation_massage">

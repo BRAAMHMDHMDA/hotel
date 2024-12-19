@@ -45,6 +45,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('testimonial-edit');
         return view('dashboard.testimonials.edit');
     }
 }

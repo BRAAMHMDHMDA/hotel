@@ -91,6 +91,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('room_type-edit');
         return view('dashboard.room-types.edit')->layout('dashboard.layout.dashboard-layout');
     }
 }

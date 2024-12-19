@@ -29,6 +29,7 @@ class Delete extends Component
 
     public function render()
     {
+        $this->authorize('team-delete');
         return view('dashboard.team.delete');
     }
 }

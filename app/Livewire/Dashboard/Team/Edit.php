@@ -46,6 +46,7 @@ class Edit extends Component
 
     public function render()
     {
+        $this->authorize('team-edit');
         return view('dashboard.team.edit');
     }
 }

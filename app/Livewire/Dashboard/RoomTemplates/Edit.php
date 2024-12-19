@@ -88,6 +88,7 @@ class Edit extends Component
 
     public function render()
     {
+
         return view('dashboard.room-templates.edit')->layout('dashboard.layout.dashboard-layout');
     }
 }

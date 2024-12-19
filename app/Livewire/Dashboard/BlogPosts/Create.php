@@ -37,6 +37,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('blog_post-list');
         return view('dashboard.blog-posts.create')->layout('dashboard.layout.dashboard-layout');
     }
 }

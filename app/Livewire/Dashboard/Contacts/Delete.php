@@ -26,6 +26,7 @@ class Delete extends Component
     }
     public function render()
     {
+        $this->authorize('contact-delete');
         return view('dashboard.contacts.delete');
     }
 }

@@ -1,6 +1,7 @@
 <x-dashboard.dashboard-layout title="Team">
 
     <x-dashboard.breadcrumb mainTitle="Team Management">
+        @can('team-create')
             <div class="ms-auto">
                 <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
                     <i class="bx bxs-plus-square"></i>
@@ -8,6 +9,7 @@
                 </button>
                 <livewire:dashboard.team.create />
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
     <div class="card">
@@ -15,9 +17,13 @@
             <livewire:dashboard.team.index />
         </div>
     </div>
+    @can('team-edit')
     <livewire:dashboard.team.edit />
-    <livewire:dashboard.team.delete />
+    @endcan
 
+    @can('team-delete')
+        <livewire:dashboard.team.delete />
+    @endcan
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>
             <div class="modal-body" id="confirmation_massage">

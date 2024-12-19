@@ -1,6 +1,7 @@
 <x-dashboard.dashboard-layout title="Gallery">
 
     <x-dashboard.breadcrumb mainTitle="Gallery Management">
+        @can('gallery-create')
             <div class="ms-auto">
                 <button class="btn btn-primary radius-30" data-bs-toggle="modal" data-bs-target="#create-modal">
                     <i class="bx bxs-plus-square"></i>
@@ -8,6 +9,7 @@
                 </button>
                 <livewire:dashboard.gallery.create />
             </div>
+        @endcan
     </x-dashboard.breadcrumb>
 
 
@@ -16,8 +18,10 @@
             <livewire:dashboard.gallery.index />
         </div>
     </div>
-    <livewire:dashboard.gallery.delete />
 
+    @can('gallery-delete')
+        <livewire:dashboard.gallery.delete />
+    @endcan
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>
             <div class="modal-body" id="confirmation_massage">

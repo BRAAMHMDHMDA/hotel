@@ -7,10 +7,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Validation\Rule;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class Admin extends Authenticatable
 {
-    use HasApiTokens, Notifiable, HasImage;
+    use HasApiTokens, Notifiable, HasImage, HasRoles;
 
     static $imageDisk = 'media';
     static $imageFolder = 'admins';
@@ -44,13 +45,15 @@ class Admin extends Authenticatable
                 'name' => ['required', 'string', Rule::unique('admins', 'name')->ignore($id)],
                 'image' => 'nullable|image',
                 'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique('admins', 'email')->ignore($id)],
-            ];
+                'selectedRoles' => ['required', 'array' , 'exists:roles,name']
+                ];
         }else{
             return [
                 'name' => ['required', 'string', Rule::unique('admins', 'name')->ignore($id)],
                 'image' => 'nullable|image',
                 'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique('admins', 'email')->ignore($id)],
-                'password' => ["required" , 'string', 'confirmed','min:6']
+                'password' => ["required" , 'string', 'confirmed','min:6'],
+                'selectedRoles' => ['required', 'array' , 'exists:roles,name']
             ];
         }
     }

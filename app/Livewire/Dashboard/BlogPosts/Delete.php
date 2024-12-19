@@ -27,6 +27,7 @@ class Delete extends Component
     }
     public function render()
     {
+        $this->authorize('blog_post-delete');
         return view('dashboard.blog-posts.delete');
     }
 }

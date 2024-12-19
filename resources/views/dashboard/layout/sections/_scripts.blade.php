@@ -10,6 +10,7 @@
 <script src="{{ asset('dash_assets/plugins/notifications/js/lobibox.min.js') }}"  data-navigate-once></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr" data-navigate-once></script>
 <script src="{{ asset('dash_assets/ckeditor/ckeditor.js') }}" data-navigate-once></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!--app JS-->
 <script src="{{ asset('dash_assets/js/app.js') }}"></script>

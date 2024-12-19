@@ -28,6 +28,7 @@ class Delete extends Component
 
     public function render()
     {
+        $this->authorize('testimonial-delete');
         return view('dashboard.testimonials.delete');
     }
 }

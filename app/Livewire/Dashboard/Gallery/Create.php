@@ -41,6 +41,7 @@ class Create extends Component
 
     public function render(): View
     {
+        $this->authorize('gallery-create');
         return view('dashboard.gallery.create');
     }
 }

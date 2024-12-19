@@ -48,7 +48,7 @@ class Create extends Component
         $this->total_night = Carbon::parse($this->check_in)->diffInDays($this->check_out);
         $this->sub_total = $this->roomTypeSelected->price * $this->number_of_rooms * $this->total_night;
         $this->actual_price = $this->roomTypeSelected->price;
-        $this->discount = ($this->sub_total * ($this->roomTypeSelected->discount/100));
+        $this->discount = (int)($this->sub_total * ($this->roomTypeSelected->discount/100));
         $this->total_price = $this->sub_total - $this->discount;
     }
 
@@ -104,6 +104,7 @@ class Create extends Component
 
     public function render()
     {
+        $this->authorize('booking-list');
         return view('dashboard.bookings.create')
             ->layout('dashboard.layout.dashboard-layout', ['title' => 'Create Booking']);
     }

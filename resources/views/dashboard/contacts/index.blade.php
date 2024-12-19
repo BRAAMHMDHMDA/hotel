@@ -13,9 +13,12 @@
             </x-dashboard.form.modal>
         </div>
     </div>
+    @can('contact-delete')
     <livewire:dashboard.contacts.delete />
+    @endcan
+    @can('contact-show')
     <livewire:dashboard.contacts.show />
-
+    @endcan
     <x-dashboard.form.modal id="bulk-delete-modal" title="Bulk Delete Members">
         <form>
             <div class="modal-body" id="confirmation_massage">
