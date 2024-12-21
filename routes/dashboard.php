@@ -19,6 +19,9 @@ use \App\Livewire\Dashboard\{
 
     Roles\Index as Roles,
 
+    ManageAreas\QuickBooking,
+    ManageAreas\FrequentQuestions,
+
 };
 
 
@@ -89,5 +92,9 @@ Route::group([
 
     //================= Roles Management Route=================
     Route::get('roles', Roles::class)->name('roles');
+
+    //================= Areas Management Route=================
+    Route::get('areas/quickBooking', QuickBooking::class)->name('quickBooking-area');
+    Route::get('areas/frequentQuestions', FrequentQuestions::class)->name('frequentQuestions-area');
 
 });

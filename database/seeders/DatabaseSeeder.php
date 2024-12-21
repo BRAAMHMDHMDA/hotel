@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             PermissionTableSeeder::class,
+            QuickBookingAreaSeeder::class,
+            FrequentQuestionsAreaSeeder::class,
         ]);
         $role = Role::create([
             'name' => config('permission.super_role_admin'),
@@ -32,5 +34,6 @@ class DatabaseSeeder extends Seeder
             'password'=> Hash::make('123123123'),
         ]);
         $superAdmin->assignRole($role);
+
     }
 }

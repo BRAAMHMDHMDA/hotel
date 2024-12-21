@@ -61,45 +61,77 @@
         <li class="menu-label">Sections</li>
         @endcanany
         @canany(['blog_post-list', 'blog_comment-list','blog_category-list'])
-        <li>
-            <a href="javascript:;" class="has-arrow">
-                <div class="parent-icon"><i class="bx bxl-blogger"></i>
-                </div>
-                <div class="menu-title">Blog</div>
-            </a>
-            <ul>
-                @can('blog_category-list')
-                    <li>
-                        <a href="{{route('dashboard.blog-categories')}}" wire:navigate>
-                            <div class="parent-icon">
-                                <i class="bx bx-category"></i>
-                            </div>
-                            <div class="menu-title">Categories</div>
-                        </a>
-                    </li>
-                @endcan
-                @can('blog_post-list')
-                    <li>
-                        <a href="{{route('dashboard.blog-posts')}}" wire:navigate>
-                            <div class="parent-icon">
-                                <i class="bx bxl-blogger"></i>
-                            </div>
-                            <div class="menu-title">Posts</div>
-                        </a>
-                    </li>
-                @endcan
-                @can('blog_comment-list')
-                    <li>
-                        <a href="{{route('dashboard.blog-comments')}}" wire:navigate>
-                            <div class="parent-icon">
-                                <i class="bx bx-comment"></i>
-                            </div>
-                            <div class="menu-title">Comments</div>
-                        </a>
-                    </li>
-                @endcan
-            </ul>
-        </li>
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bxl-blogger"></i>
+                    </div>
+                    <div class="menu-title">Blog</div>
+                </a>
+                <ul>
+                    @can('blog_category-list')
+                        <li>
+                            <a href="{{route('dashboard.blog-categories')}}" wire:navigate>
+                                <div class="parent-icon">
+                                    <i class="bx bx-category"></i>
+                                </div>
+                                <div class="menu-title">Categories</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('blog_post-list')
+                        <li>
+                            <a href="{{route('dashboard.blog-posts')}}" wire:navigate>
+                                <div class="parent-icon">
+                                    <i class="bx bxl-blogger"></i>
+                                </div>
+                                <div class="menu-title">Posts</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('blog_comment-list')
+                        <li>
+                            <a href="{{route('dashboard.blog-comments')}}" wire:navigate>
+                                <div class="parent-icon">
+                                    <i class="bx bx-comment"></i>
+                                </div>
+                                <div class="menu-title">Comments</div>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
+        @endcanany
+
+        @canany(['blog_post-list', 'blog_comment-list','blog_category-list'])
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="bx bx-layout"></i>
+                    </div>
+                    <div class="menu-title">Home Page Manage</div>
+                </a>
+                <ul>
+                    @can('blog_category-list')
+                        <li>
+                            <a href="{{route('dashboard.quickBooking-area')}}" wire:navigate>
+                                <div class="parent-icon">
+                                    <i class="bx bx-fast-forward-circle"></i>
+                                </div>
+                                <div class="menu-title">Quick Booking Area</div>
+                            </a>
+                        </li>
+                    @endcan
+                    @can('blog_post-list')
+                        <li>
+                            <a href="{{route('dashboard.frequentQuestions-area')}}" wire:navigate>
+                                <div class="parent-icon">
+                                    <i class="bx bx-question-mark"></i>
+                                </div>
+                                <div class="menu-title">Frequent Questions Area</div>
+                            </a>
+                        </li>
+                    @endcan
+                </ul>
+            </li>
         @endcanany
         @can('team-list')
             <li>

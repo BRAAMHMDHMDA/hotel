@@ -1,1 +1,0 @@
-1734530057a:10:{s:2:"id";s:15:"bigint unsigned";s:4:"name";s:12:"varchar(255)";s:5:"phone";s:3:"int";s:10:"image_path";s:12:"varchar(255)";s:5:"email";s:12:"varchar(255)";s:17:"email_verified_at";s:9:"timestamp";s:8:"password";s:12:"varchar(255)";s:14:"remember_token";s:12:"varchar(100)";s:10:"created_at";s:9:"timestamp";s:10:"updated_at";s:9:"timestamp";}
