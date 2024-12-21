@@ -12,6 +12,7 @@
                     <div class="col-lg-8">
                         <div class="billing-details">
                             <h3 class="title">Billing Details</h3>
+                            {{$errors}}
 
                             <div class="row mt-4 mb-2">
 
@@ -66,7 +67,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4">
                         <section class="checkout-area pb-20">
                             <div class="card-body pt-0">

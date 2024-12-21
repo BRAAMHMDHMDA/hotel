@@ -30,6 +30,9 @@
     $(document).on('notify_success', function(e) {
         toastr.success(e.detail[0]);
     });
+    $(document).on('notify_error', function(e) {
+        toastr.error(e.detail[0]);
+    });
 
     @if(Session::has('success'))
     toastr.success(" {{ Session::get('success') }} ");
