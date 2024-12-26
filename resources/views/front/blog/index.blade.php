@@ -9,7 +9,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-
+                    @empty(count($posts))
+                        <div class="alert alert-warning">No Result Found</div>
+                    @else
                     @foreach($posts as $post)
                         <div class="col-lg-12">
                             <div class="blog-card">
@@ -38,7 +40,7 @@
                             </div>
                         </div>
                     @endforeach
-
+                    @endempty
                     <div class="col-lg-12 col-md-12">
                         <div class="pagination-area">
                             {{$posts->links('front.layout.sections._pagination')}}
@@ -50,8 +52,16 @@
                     <div class="side-bar-wrap">
                         <div class="search-widget">
                             <form class="search-form">
-                                <input type="search" class="form-control" placeholder="Search...">
-                                <button type="submit">
+{{--                                <input type="search"--}}
+{{--                                       wire:model.debounce.300ms="search"--}}
+{{--                                       class="form-control" placeholder="Search...">--}}
+                                <input
+                                    type="text"
+                                    wire:model.live.debounce.300ms="search"
+                                    placeholder="Search posts by title"
+                                    class="form-control mb-3"
+                                >
+                                <button type="button" class="btn">
                                     <i class="bx bx-search"></i>
                                 </button>
                             </form>

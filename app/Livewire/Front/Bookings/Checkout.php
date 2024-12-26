@@ -97,7 +97,7 @@ class Checkout extends Component
         if ($this->payment_method === 'stripe'){
             return $this->redirectRoute('booking.payment', $booking->id, navigate: true);
         }
-        return $this->redirectRoute('home', navigate: true);
+        return $this->redirectRoute('user.bookings', navigate: true);
     }
 
 

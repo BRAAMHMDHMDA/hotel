@@ -9,6 +9,7 @@ class Show extends Component
 {
     public $room_type, $checkIn, $checkOut, $guests, $number_of_rooms;
 
+
     public function mount($slug)
     {
         // Retrieve the parameters

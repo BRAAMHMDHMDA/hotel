@@ -20,35 +20,35 @@
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
                         <li class="nav-item">
-                            <a wire:navigate href="{{route('home')}}"  class="nav-link active">
+                            <a wire:navigate href="{{ route('home') }}" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
                                 Home
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
                                 About
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a wire:navigate href="{{ route('gallery') }}" class="nav-link">
+                            <a wire:navigate href="{{ route('gallery') }}" class="nav-link {{ Request::routeIs('gallery') ? 'active' : '' }}">
                                 Gallery
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a wire:navigate href="{{route('blog')}}" class="nav-link">
+                            <a wire:navigate href="{{route('blog')}}" class="nav-link {{ Request::routeIs('blog') ? 'active' : '' }}">
                                 Blog
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a wire:navigate href="{{ route('rooms') }}" class="nav-link">
+                            <a wire:navigate href="{{ route('rooms') }}" class="nav-link {{ Request::routeIs('rooms') ? 'active' : '' }}">
                                 Rooms
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a wire:navigate href="{{ route('contact') }}" class="nav-link">
+                            <a wire:navigate href="{{ route('contact') }}" class="nav-link {{ Request::routeIs('contact') ? 'active' : '' }}">
                                 Contact
                             </a>
                         </li>

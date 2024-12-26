@@ -35,7 +35,7 @@ class Edit extends Component
     public function submit(): void
     {
         $data = $this->validate();
-        $data = BlogPost::updateImage($data, $this->old_image);
+        $data = BlogPost::updateImage($data, $this->old_image, 1000, 600);
         $this->blogPost->update($data);
 
         $this->redirectRoute('dashboard.blog-posts', navigate: true);

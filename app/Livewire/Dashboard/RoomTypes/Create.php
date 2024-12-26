@@ -30,7 +30,7 @@ class Create extends Component
     public function submit()
     {
         $data= $this->validate();
-        $roomType = RoomType::create(RoomType::storeImage($data));
+        $roomType = RoomType::create(RoomType::storeImage($data, 550, 450));
 
         // Save Facilities & Delete That Not Linked With any Room Template
         $facilitiesIDs = [];

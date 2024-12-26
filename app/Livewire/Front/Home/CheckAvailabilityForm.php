@@ -30,6 +30,6 @@ class CheckAvailabilityForm extends Component
 
     public function render(): View
     {
-        return view('front.home.check-availability-form');
+        return view('front.home.sections.check-availability-form');
     }
 }

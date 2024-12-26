@@ -77,7 +77,7 @@
                         <x-front.form.input name="capacity" label="Capacity" type="number" placeholder="0"/>
                     </div>
                     <div class="col-md-6">
-                        <x-front.form.input name="size" label="Size" type="number" placeholder="0"/>
+                        <x-front.form.input name="size" label="Size" placeholder="35m2 / 376ft2"/>
                     </div>
                     <div class="col-12">
                         <x-front.form.input name="view" label="View" placeholder="Enter Room View"/>

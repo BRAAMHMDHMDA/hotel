@@ -66,8 +66,8 @@
                         </div>
                     @endforeach
                 @endempty
-
             </div>
+
         </div>
     </div>
     <!-- Room Area End -->

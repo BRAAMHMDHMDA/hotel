@@ -31,7 +31,7 @@ return [
                 'src' => '',
                 'validate' => 'image',
             ],
-            'app.logo&name' => [
+            'app.logo-name' => [
                 'label' => 'App Logo & Name (Full Logo)',
                 'type' => 'image',
                 'src' => '',
@@ -108,6 +108,33 @@ return [
                 'validate' => 'string|max:255',
             ],
 
+        ]
+    ],
+    'contact' => [
+        'title' => 'Contact Info',
+        'name_menu' => 'Contact Info',
+        'icon' => 'bx bx-link fs-5 me-2',
+        'settings' => [
+            'contact.address' => [
+                'label' => 'Address',
+                'type' => 'text',
+                'validate' => 'string|max:255',
+            ],
+            'contact.phone' => [
+                'label' => 'Phone Number',
+                'type' => 'text',
+                'validate' => 'string|max:255',
+            ],
+            'contact.email' => [
+                'label' => 'Email Address',
+                'type' => 'email',
+                'validate' => 'string|max:255',
+            ],
+            'contact.map' => [
+                'label' => 'Map Embed Code',
+                'type' => 'text',
+                'validate' => 'string',
+            ],
         ]
     ],
 ];

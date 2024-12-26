@@ -31,12 +31,12 @@ class CompletionStripePayment
                 return;
             }
 
-            return to_route('home')->with([
+            return to_route('user.bookings')->with([
                 'success' => 'Payment Successfully'
             ]);
         }
 
-        return to_route('home')->with([
+        return to_route('user.bookings')->with([
             'booking' => $booking->id,
             'status' => $paymentIntent->status,
         ]);

@@ -63,7 +63,7 @@ class Edit extends Component
     {
         // Validate & Update Data
         $data = $this->validate();
-        $this->roomType->update(RoomType::updateImage($data, $this->old_image));
+        $this->roomType->update(RoomType::updateImage($data, $this->old_image, 550, 450));
 
         // Save Facilities & Delete That Not Linked With any Room Template
         $facilitiesIDs = [];

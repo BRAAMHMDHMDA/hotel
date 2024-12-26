@@ -14,7 +14,7 @@ class PostDetails extends Component
 
     public function mount(BlogPost $post): void
     {
-        $this->post = $post->load('comments');
+        $this->post = $post->load('comments')->load('author');
     }
 
     public function post_comment(): void

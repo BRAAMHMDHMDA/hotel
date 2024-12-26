@@ -14,7 +14,7 @@
                             <h2>Let's Start to Give Us a Message and Contact With Us</h2>
                         </div>
                         <div class="contact-img">
-                            <img src="assets/img/contact/contact-img1.jpg" alt="Images">
+                            <img src="{{asset('front_assets/img/contact/contact-img1.jpg')}}" alt="Images">
                         </div>
                     </div>
                 </div>
@@ -144,8 +144,7 @@
     <!-- Map Area -->
     <div class="map-area">
         <div class="container-fluid m-0 p-0">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50194.82376159623!2d-79.09792989247224!3d38.159337740034566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b4a08eb8621697%3A0xe5d6e4710a09b66e!2zU3RhdW50b24sIOCmreCmvuCmsOCnjeCmnOCmv-CmqOCmv-Cmr-CmvOCmviAyNDQwMSwg4Kau4Ka-4Kaw4KeN4KaV4Ka_4KaoIOCmr-CngeCmleCnjeCmpOCmsOCmvuCmt-CnjeCmn-CnjeCmsA!5e0!3m2!1sbn!2sbd!4v1604126938221!5m2!1sbn!2sbd"></iframe>
-        </div>
+        {!! config('contact.map') !!}
     </div>
     <!-- Map Area End -->
 

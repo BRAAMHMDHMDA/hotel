@@ -15,11 +15,7 @@
                     <ul>
                         <li>
                             <i class='bx bx-user'></i>
-                            29K
-                        </li>
-                        <li>
-                            <i class='bx bx-message-square-detail'></i>
-                            15K
+                            By {{$post->author->name}}
                         </li>
                     </ul>
                 </div>

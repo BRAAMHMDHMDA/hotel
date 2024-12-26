@@ -71,7 +71,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="notify bg-light-success text-success">
-                                            <img src="{{ asset('dash_assets/images/app/outlook.png') }}" width="25" alt="user avatar">
+{{--                                            <img src="" width="25" alt="user avatar">--}}
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">Account Created<span class="msg-time float-end">28 min
@@ -117,7 +117,7 @@
                                 <a class="dropdown-item" href="javascript:;">
                                     <div class="d-flex align-items-center">
                                         <div class="notify bg-light-primary">
-                                            <img src="{{ asset('dash_assets/images/app/github.png') }}" width="25" alt="user avatar">
+{{--                                            <img src="{{ asset('dash_assets/images/app/github.png') }}" width="25" alt="user avatar">--}}
                                         </div>
                                         <div class="flex-grow-1">
                                             <h6 class="msg-name">New 24 authors<span class="msg-time float-end">1 day

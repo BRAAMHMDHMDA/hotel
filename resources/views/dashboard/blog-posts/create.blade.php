@@ -12,12 +12,10 @@
 @push('scripts')
     <script>
         document.addEventListener('livewire:navigated', function () {
-            console.log('navigated');
             $editor = CKEDITOR.replace('content');
             // Update Livewire content only when form is submitted
             document.getElementById('submit').addEventListener('click', function (e) {
                 @this.set('content', $editor.getData())
-
             });
         });
     </script>

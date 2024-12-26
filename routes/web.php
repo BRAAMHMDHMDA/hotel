@@ -17,13 +17,14 @@ use App\Livewire\Front\{
 
     Pages\Gallery,
     Pages\Contact,
+    Pages\Home,
 
 };
 
 
 // ===================== Home Routes =====================================
 Route::redirect('/', '/home');
-Route::view('home', 'front.home.index')->name('home');
+Route::get('home', Home::class)->name('home');
 
 // ===================== Rooms Routes =====================================
 Route::get('rooms', Rooms::class)->name('rooms');

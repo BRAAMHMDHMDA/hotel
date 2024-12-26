@@ -67,7 +67,7 @@
                                                                 @endif
                                                             </td>
                                                             <td>
-                                                                @if($booking->status == 'pending')
+                                                                @if($booking->status == 'pending' && $booking->payment_method !== 'stripe')
                                                                     <button wire:click="cancel({{ $booking->id }})" class="btn text-danger fs-5" title="Cancel Booking">
                                                                         <i class="bx bx-task-x"></i>
                                                                     </button>

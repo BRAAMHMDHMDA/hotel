@@ -29,7 +29,7 @@ class Create extends Component
     public function submit()
     {
         $data= $this->validate();
-        BlogPost::create(BlogPost::storeImage($data));
+        BlogPost::create(BlogPost::storeImage($data, 1000, 600));
 
         $this->dispatch('notify_success', "Blog-Post Added Successfully");
         $this->redirectRoute('dashboard.blog-posts', navigate: true);

@@ -77,7 +77,7 @@ class RoomType extends Model
             'capacity' => 'required|integer|min:0',
             'price' => 'required|numeric|min:0',
             'discount' => 'required|numeric|min:0',
-            'size' => 'required|integer|min:0',
+            'size' => 'required|string',
             'view' => 'required|string',
             'bed_style' => 'required|string',
             'short_description' => 'required|string|min:5|max:255',
