@@ -22,11 +22,11 @@
     <!-- Book Area Two End -->
 
     <!-- Team Area Three -->
-    @include('front.home.sections._team')
+    <x-front.sections.team />
     <!-- Team Area Three End -->
 
     <!-- Testimonials Area Three -->
-    @include('front.home.sections._testimonials')
+    <x-front.sections.testimonials />
     <!-- Testimonials Area Three End -->
 
     <!-- FAQ Area -->

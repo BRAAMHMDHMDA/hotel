@@ -1,30 +1,23 @@
 <?php
-use Illuminate\Support\Facades\Route;
 
-use App\Livewire\Front\{
-    Blog\Index as Blog,
+use App\Livewire\Front\{Blog\Index as Blog,
     Blog\PostDetails,
-
     Bookings\Checkout,
     Bookings\Payment,
-
+    Home\Index,
+    Pages\Contact,
+    Pages\Gallery,
     Rooms\Index as Rooms,
     Rooms\Show as Show_Room,
-
     User\Bookings,
     User\ChangePassword,
-    User\ProfileInfo,
-
-    Pages\Gallery,
-    Pages\Contact,
-    Pages\Home,
-
-};
+    User\ProfileInfo,};
+use Illuminate\Support\Facades\Route;
 
 
 // ===================== Home Routes =====================================
 Route::redirect('/', '/home');
-Route::get('home', Home::class)->name('home');
+Route::get('home', Index::class)->name('home');
 
 // ===================== Rooms Routes =====================================
 Route::get('rooms', Rooms::class)->name('rooms');
@@ -33,6 +26,15 @@ Route::get('rooms/{slug}', Show_Room::class)->name('room.show');
 // ===================== Blog Routes =====================================
 Route::get('blog/{category:slug?}', Blog::class)->name('blog');
 Route::get('blog/posts/{post:slug}', PostDetails::class)->name('post.details');
+
+// ===================== Gallery Route =====================================
+Route::get('gallery', Gallery::class)->name('gallery');
+
+// ===================== Contact Page Route =====================================
+Route::get('contact', Contact::class)->name('contact');
+
+// ===================== About Page Route =====================================
+Route::view('about', 'front.pages.about')->name('about');
 
 
 Route::middleware('auth:web')->group(function () {
@@ -48,12 +50,6 @@ Route::middleware('auth:web')->group(function () {
         ->name('booking.payment');
     Route::get('bookings/{booking}/pay/stripe/callback', \App\Actions\Front\CompletionStripePayment::class)
         ->name('stripe.return');
-
-    // ===================== Gallery Route =====================================
-    Route::get('gallery', Gallery::class)->name('gallery');
-
-    // ===================== Contact Route =====================================
-    Route::get('contact', Contact::class)->name('contact');
 
 
 });

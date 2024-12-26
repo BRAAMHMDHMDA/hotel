@@ -25,7 +25,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link {{ Request::routeIs('home') ? 'active' : '' }}">
+                            <a wire:navigate href="{{ route('about') }}" class="nav-link {{ Request::routeIs('about') ? 'active' : '' }}">
                                 About
                             </a>
                         </li>
