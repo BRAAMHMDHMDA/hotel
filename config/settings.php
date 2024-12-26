@@ -36,6 +36,12 @@ return [
                 'type' => 'image',
                 'src' => '',
                 'validate' => 'image',
+            ],
+            'app.logo-footer' => [
+                'label' => 'App Logo Footer (Dark)',
+                'type' => 'image',
+                'src' => '',
+                'validate' => 'image',
             ]
         ],
     ],

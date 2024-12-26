@@ -2,7 +2,10 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +29,20 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $e): \Illuminate\Http\Response|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response|\Illuminate\Http\RedirectResponse
+    {
+        // Check if the exception is a 404 (NotFoundHttpException)
+        if ($e instanceof NotFoundHttpException) {
+            // Check if the URL starts with "dashboard/"
+            if ($request->is('dashboard/*')) {
+                return response()->view('dashboard.pages.404', [], 404);
+            }
+            // Default 404 page
+            return response()->view('front.pages.404', [], 404);
+        }
+
+        return parent::render($request, $e);
     }
 }

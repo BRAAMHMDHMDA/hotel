@@ -1,7 +1,7 @@
 <!-- Banner Form Area -->
-<div class="banner-form-area">
+<div class="banner-form-area section-bg">
     <div class="container">
-        <div class="banner-form">
+        <div class="banner-form" style="background-color: #fff">
             <form wire:submit.prevent="submit">
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3">

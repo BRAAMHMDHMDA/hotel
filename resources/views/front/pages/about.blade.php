@@ -1,5 +1,10 @@
 <x-front.front-layout title="About Us">
 
+    <!-- Inner Banner -->
+    @include('front.layout.sections._banner', ['current_page'=> 'About'])
+    <!-- Inner Banner End -->
+
+
     <!-- Choose Area -->
     <div class="choose-area section-bg pb-70 pt-100">
         <div class="container">

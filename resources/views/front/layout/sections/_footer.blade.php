@@ -7,7 +7,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo">
                             <a href="#">
-                                <img src="{{config('app.logo-name')}}" alt="Images">
+                                <img src="{{ config('app.logo-footer') }}" alt="Images">
                             </a>
                         </div>
                         <p>

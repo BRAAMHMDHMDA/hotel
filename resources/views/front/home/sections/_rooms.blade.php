@@ -1,5 +1,5 @@
 <!-- Room Area -->
-<div class="room-area pt-100 pb-70 section-bg" style="background-color:#ffffff">
+<div class="room-area pt-100 pb-70 section-bg" style="">
     <div class="container">
         <div class="section-title text-center">
             <span class="sp-color">ROOMS</span>
@@ -31,15 +31,17 @@
                                         <i class='bx bxs-star'></i>
                                         <i class='bx bxs-star'></i>
                                     </div>
-                                    <p>{{$room->short_description}}</p>
-                                    <ul>
-                                        <li><i class='bx bx-user'></i> {{$room->capacity}} Person</li>
-                                        <li><i class='bx bx-expand'></i> {{$room->size}}</li>
+{{--                                    <div style="height: 100px; overflow: hidden;" >--}}
+{{--                                        <p>{{$room->short_description}}</p>--}}
+{{--                                    </div>--}}
+                                    <ul class="mt-4">
+                                        <li ><i class='bx bx-user'></i> {{$room->capacity}} Person</li>
+                                        <li ><i class='bx bx-expand'></i> {{$room->size}}</li>
                                     </ul>
 
-                                    <ul>
-                                        <li><i class='bx bx-show-alt'></i> {{$room->view}}</li>
-                                        <li><i class='bx bxs-hotel'></i> {{$room->bed_style}}</li>
+                                    <ul class="">
+                                        <li ><i class='bx bx-show-alt'></i> {{$room->view}}</li>
+                                        <li ><i class='bx bxs-hotel'></i> {{$room->bed_style}}</li>
                                     </ul>
 
                                     <a href="{{ route('room.show', $room->slug) }}" class="book-more-btn">

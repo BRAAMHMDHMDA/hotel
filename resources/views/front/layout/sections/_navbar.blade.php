@@ -3,8 +3,8 @@
     <!-- Menu For Mobile Device -->
     <div class="mobile-nav">
         <a wire:navigate href="{{route('home')}}" class="logo">
-            <img src="{{ asset('front_assets/img/logos/logo-1.png') }}" class="logo-one" alt="Logo">
-            <img src="{{ asset('front_assets/img/logos/footer-logo1.png') }}" class="logo-two" alt="Logo">
+            <img src="{{ config('app.logo-name') }}" class="logo-one" alt="Logo">
+            <img src="{{ config('app.logo-footer') }}" class="logo-two" alt="Logo">
         </a>
     </div>
 
@@ -13,8 +13,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-light ">
                 <a class="navbar-brand" wire:navigate href="{{route('home')}}">
-                    <img src="{{ asset('front_assets/img/logos/logo-1.png') }}" class="logo-one" alt="Logo">
-                    <img src="{{ asset('front_assets/img/logos/footer-logo1.png') }}" class="logo-two" alt="Logo">
+                    <img src="{{ config('app.logo-name') }}" class="logo-one" alt="Logo">
+                    <img src="{{ config('app.logo-footer') }}" class="logo-two" alt="Logo">
                 </a>
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
