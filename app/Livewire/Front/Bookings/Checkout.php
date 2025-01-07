@@ -2,9 +2,12 @@
 
 namespace App\Livewire\Front\Bookings;
 
+use App\Models\Admin;
 use App\Models\Booking;
 use App\Models\RoomType;
+use App\Notifications\BookingCreatedNotification;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 
@@ -80,6 +83,11 @@ class Checkout extends Component
         try {
 
             $booking = Booking::create($data);
+
+            $admins = Admin::WhereHas('roles.permissions', function ($query) {
+                $query->where('name', 'booking-list');
+            })->get();
+            Notification::send($admins, new BookingCreatedNotification($booking));
 
             $roomIds = $this->room_type->rooms->pluck('id')->toArray();
             $bookingRoomIds = array_slice($roomIds, 0, $this->number_of_rooms);
