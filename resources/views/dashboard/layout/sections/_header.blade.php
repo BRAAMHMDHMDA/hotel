@@ -21,7 +21,7 @@
                         </a>
                     </li>
 
-                    <x-dashboard.notifications-menu />
+                    <livewire:dashboard.sections.notifications-menu />
 
                     <li class="nav-item dropdown dropdown-large">
                         <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative"

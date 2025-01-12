@@ -14,8 +14,8 @@
         </a>
         <div class="header-notifications-list">
             @foreach($notifications as $notification)
-                <a class="dropdown-item @if($notification->unread()) bg-secondary-subtle @endif"
-                   href="{{$notification->data['url']}}?notification_id={{$notification->id}}" style="margin-bottom: 2px"
+                <a wire:navigate class="dropdown-item @if($notification->unread()) bg-light-info @endif"
+                   href="{{$notification->data['url']}}?notification_id={{$notification->id}}" style="margin-bottom: 0px"
                 >
                     <div class="d-flex align-items-center">
                         <div class="notify bg-light-success text-success">
