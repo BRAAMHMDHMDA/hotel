@@ -23,7 +23,7 @@
     <link href="{{ asset('dash_assets/css/icons.css') }}" rel="stylesheet">
     <!-- Theme Style CSS -->
     <link rel="stylesheet" href="{{ asset('dash_assets/css/dark-theme.css') }}" />
-{{--    <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />--}}
+    <link rel="stylesheet" href="{{ asset('dash_assets/css/semi-dark.css') }}" />
 {{--    <link rel="stylesheet" href="{{ asset('dash_assets/css/header-colors.css') }}" />--}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">

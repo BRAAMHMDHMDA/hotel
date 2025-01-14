@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="">
+<html lang="en" class="semi-dark">
 
     <!-- Start Head Tag -->
     @livewireStyles
