@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasImage;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Validation\Rule;
 
 class Testimonial extends Model
@@ -18,7 +19,10 @@ class Testimonial extends Model
         'image_path',
         'message',
     ];
-
+    protected static function booted()
+    {
+        static::saved(fn()=> Cache::forget('testimonials'));
+    }
     public static function rules($id=null) :array
     {
         return [

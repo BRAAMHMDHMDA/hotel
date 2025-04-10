@@ -22,7 +22,7 @@ class Delete extends Component
 
         $this->dispatch('deleteModalToggle');
         $this->dispatch('notify_success', "Blog-Category Deleted Successfully");
-        $this->dispatch('refreshData')->to(index::class);
+        $this->dispatch('refreshData')->to(Index::class);
     }
 
     public function render()

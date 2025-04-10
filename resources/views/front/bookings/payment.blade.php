@@ -75,7 +75,7 @@
 </div>
 
 @push('scripts')
-    <script src="https://js.stripe.com/v3/" data-navigate-once></script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     <script data-navigate-once>
         document.addEventListener('livewire:navigated', () => {

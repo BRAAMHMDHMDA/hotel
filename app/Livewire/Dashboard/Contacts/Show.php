@@ -16,7 +16,7 @@ class Show extends Component
         if ($this->contact->is_read == "0") {
             $this->contact->is_read = "1";
             $this->contact->save();
-            $this->dispatch('refreshData')->to(index::class);
+            $this->dispatch('refreshData')->to(Index::class);
         }
         $this->dispatch('showModal');
     }

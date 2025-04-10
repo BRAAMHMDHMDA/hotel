@@ -37,7 +37,7 @@ class Edit extends Component
         $data= $this->validate();
         $this->room->update($data);
 
-        $this->dispatch('refreshData')->to(index::class);
+        $this->dispatch('refreshData')->to(Index::class);
         $this->dispatch('editModalToggle');
         $this->dispatch('notify_success', "(Room $this->number) Updated Successfully");
     }
