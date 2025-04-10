@@ -64,8 +64,8 @@ The ATOLI Control Panel provides administrators with powerful tools for efficien
 ## Tools and Technologies
 ATOLI is built with cutting-edge tools for optimal performance:
 
-- **Front-End**: HTML, CSS, and Bootstrap for responsive design; Livewire for dynamic SPA, real-time interfaces.
-- **Back-End**: Php Laravel for robust, secure server-side logic.
+- **Front-End**: HTML, CSS, and Bootstrap for responsive design; Livewire for dynamic, real-time interfaces.
+- **Back-End**: PHP and Laravel for robust, secure server-side logic.
 - **Database**: MySQL for efficient data management.
 - **Real-Time Features**: Pusher for instant updates and notifications.
 - **Payment Gateway**: Stripe for secure and seamless transactions.
@@ -83,7 +83,7 @@ We’re committed to enhancing ATOLI with:
 ATOLI Hotel App merges seamless guest booking with advanced management tools, making it the perfect choice for modern hospitality.
 
 ### Contact Us
-For inquiries or feedback, reach out at: [dev.bhmda@gmail.com](mailto:dev.bhmda@gmail.com)
+For inquiries or feedback, reach out at: [your-email@example.com](mailto:your-email@example.com)
 
 ---
 
@@ -142,7 +142,7 @@ For inquiries or feedback, reach out at: [dev.bhmda@gmail.com](mailto:dev.bhmda@
 تم تطوير ATOLI باستخدام أدوات متطورة لتحقيق أداء مثالي:
 
 - **واجهة المستخدم**: HTML، CSS، وBootstrap لتصميم متجاوب؛ Livewire لواجهات ديناميكية فورية.
-- **الخلفية**: PHP Laravel لمنطق خادم قوي وآمن.
+- **الخلفية**: PHP وLaravel لمنطق خادم قوي وآمن.
 - **قاعدة البيانات**: MySQL لإدارة البيانات بكفاءة.
 - **الميزات الفورية**: Pusher لتحديثات وإشعارات لحظية.
 - **بوابة الدفع**: Stripe لمعاملات آمنة وسلسة.
@@ -160,4 +160,4 @@ For inquiries or feedback, reach out at: [dev.bhmda@gmail.com](mailto:dev.bhmda@
 تطبيق ATOLI يجمع بين تجربة حجز سهلة للنزلاء وأدوات إدارية متطورة، مما يجعله الخيار المثالي للفنادق العصرية.
 
 ### تواصلوا معنا
-للاستفسارات أو التعليقات، تواصلوا عبر: [dev.bhmda@gmail.com](mailto:dev.bhmda@gmail.com)
+للاستفسارات أو التعليقات، تواصلوا عبر: [your-email@example.com](mailto:dev.bhmda@gmail.com)
