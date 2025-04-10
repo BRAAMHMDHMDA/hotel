@@ -82,8 +82,8 @@ The ATOLI Control Panel provides administrators with powerful tools for efficien
 ## Tools and Technologies
 ATOLI is built with cutting-edge tools for optimal performance:
 
-- **Front-End**: HTML, CSS, and Bootstrap for responsive design; Livewire for dynamic, real-time interfaces.
-- **Back-End**: PHP and Laravel for robust, secure server-side logic.
+- **Front-End**: HTML, CSS, and Bootstrap for responsive design; Livewire for dynamic SPA, real-time interfaces.
+- **Back-End**: PHP Laravel for robust, secure server-side logic.
 - **Database**: MySQL for efficient data management.
 - **Real-Time Features**: Pusher for instant updates and notifications.
 - **Payment Gateway**: Stripe for secure and seamless transactions.
@@ -162,7 +162,7 @@ For inquiries or feedback, reach out at: [dev.bhmda@gmail.com](mailto:dev.bhmda@
 تم تطوير ATOLI باستخدام أدوات متطورة لتحقيق أداء مثالي:
 
 - **واجهة المستخدم**: HTML، CSS، وBootstrap لتصميم متجاوب؛ Livewire لواجهات ديناميكية فورية.
-- **الخلفية**: PHP وLaravel لمنطق خادم قوي وآمن.
+- **الخلفية**: PHP Laravel لمنطق خادم قوي وآمن.
 - **قاعدة البيانات**: MySQL لإدارة البيانات بكفاءة.
 - **الميزات الفورية**: Pusher لتحديثات وإشعارات لحظية.
 - **بوابة الدفع**: Stripe لمعاملات آمنة وسلسة.
