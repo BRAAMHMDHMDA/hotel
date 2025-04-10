@@ -43,7 +43,7 @@ class Edit extends Component
         $this->admin->syncRoles($this->selectedRoles);
 
         $this->dispatch('editModalToggle');
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('notify_success', "$this->name (Admin) Updated Successfully");
         $this->resetExcept(['roles']);
     }

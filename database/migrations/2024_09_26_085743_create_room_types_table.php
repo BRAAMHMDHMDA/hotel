@@ -30,50 +30,6 @@ return new class extends Migration
             $table->enum('status', [RoomType::STATUS_ACTIVE, RoomType::STATUS_DRAFT])->default(RoomType::STATUS_DRAFT);
             $table->timestamps();
         });
-        Schema::create('rooms', function (Blueprint $table) {
-            $table->id();
-            $table->string('number');
-            $table->foreignId('room_type_id')->constrained('room_types')->restrictOnDelete();
-            $table->enum('status', [Room::STATUS_ACTIVE, Room::STATUS_DRAFT])->default(Room::STATUS_DRAFT);
-            $table->timestamps();
-        });
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->string('code')->unique();
-            $table->foreignId('room_type_id')->constrained('room_types')->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
-            $table->date('check_in');
-            $table->date('check_out');
-            $table->unsignedInteger('persons');
-            $table->unsignedInteger('number_of_rooms');
-
-            $table->unsignedInteger('total_night');
-            $table->unsignedFloat('actual_price');
-            $table->unsignedFloat('sub_total');
-            $table->unsignedInteger('discount')->default(0);
-            $table->unsignedFloat('total_price');
-
-            $table->string('payment_method');
-            $table->string('payment_status')->default('pending');
-            $table->string('transition_id')->nullable();
-
-            $table->string('name');
-            $table->string('email');
-            $table->string('phone');
-            $table->string('country');
-            $table->string('state');
-            $table->string('zip_code');
-            $table->string('address');
-            $table->string('status')->default('pending');
-
-            $table->timestamps();
-        });
-        Schema::create('booking_room', function (Blueprint $table) {
-            $table->foreignId('booking_id')->constrained('bookings')->cascadeOnDelete();
-            $table->foreignId('room_id')->constrained('rooms')->cascadeOnDelete();
-
-            $table->primary(['booking_id', 'room_id']);
-        });
     }
 
     /**

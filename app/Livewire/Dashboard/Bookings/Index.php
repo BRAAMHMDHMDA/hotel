@@ -162,7 +162,7 @@ final class Index extends PowerGridComponent
 
     public function downloadInvoice(Booking $booking): \Symfony\Component\HttpFoundation\StreamedResponse
     {
-        return BookingInvoice::download($booking);
+        return BookingInvoice::Download($booking);
     }
 
     public function actions(): array

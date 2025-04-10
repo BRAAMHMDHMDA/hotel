@@ -18,7 +18,7 @@ class Create extends Component
         $data= $this->validate();
         BlogCategory::create($data);
 
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "Blog-Category Added Successfully");
         $this->reset();

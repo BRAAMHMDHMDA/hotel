@@ -22,7 +22,7 @@ class Create extends Component
         $data= $this->validate();
         Testimonial::create(Testimonial::storeImage($data,50,50));
 
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "Testimonial Added Successfully");
         $this->reset();

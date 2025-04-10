@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -38,10 +37,6 @@ class RoomType extends Model
         'description',
         'status',
     ];
-    protected static function booted()
-    {
-        static::saved(fn()=> Cache::forget('rooms'));
-    }
     public function setNameAttribute($value)
     {
         $this->attributes['slug'] = Str::slug($value);
@@ -107,11 +102,6 @@ class RoomType extends Model
     public function rooms(): HasMany
     {
         return $this->hasMany(Room::class);
-    }
-
-    public function bookings()
-    {
-        return $this->hasMany(Booking::class);
     }
 
 }

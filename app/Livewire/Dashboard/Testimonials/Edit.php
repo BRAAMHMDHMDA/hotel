@@ -38,7 +38,7 @@ class Edit extends Component
         $this->testimonial->update($data);
 
         $this->dispatch('editModalToggle');
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('notify_success', "Testimonial Updated Successfully");
         $this->reset();
     }

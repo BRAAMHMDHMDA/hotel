@@ -22,7 +22,7 @@ class Checkout extends Component
     public function mount()
     {
         $bookingData = $this->bookingData = session('bookingData');
-        if (is_null($bookingData)) return $this->redirectRoute('rooms', navigate: true);
+        if (is_null($bookingData)) return $this->redirectRoute('home', navigate: true);
 
             $this->check_in = new \DateTime($bookingData['checkIn']);
             $this->check_out = new \DateTime($bookingData['checkOut']);
@@ -84,7 +84,7 @@ class Checkout extends Component
 
             $booking = Booking::create($data);
 
-            $admins = Admin::whereHas('roles.permissions', function ($query) {
+            $admins = Admin::WhereHas('roles.permissions', function ($query) {
                 $query->where('name', 'booking-list');
             })->get();
             Notification::send($admins, new BookingCreatedNotification($booking));

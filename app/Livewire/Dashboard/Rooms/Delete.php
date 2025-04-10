@@ -23,7 +23,7 @@ class Delete extends Component
 
         $this->dispatch('deleteModalToggle');
         $this->dispatch('notify_success', "Room Number of #$number Deleted Successfully");
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
     }
 
     public function render()

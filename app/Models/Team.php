@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Traits\HasImage;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Validation\Rule;
 
 class Team extends Model
@@ -21,10 +20,7 @@ class Team extends Model
         'position',
         'facebook',
     ];
-    protected static function booted()
-    {
-        static::saved(fn()=> Cache::forget('team'));
-    }
+
     public static function rules($id=null) :array
     {
         return [

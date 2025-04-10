@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -21,6 +20,7 @@ class BlogPost extends Model
     const STATUS_DRAFT = 'draft';
     const STATUS_PUBLISHED = 'published';
     protected $fillable = ['title', 'image_path', 'short_description', 'content', 'status', 'blog_category_id'];
+
     // Rules
     public static function rules($id=null) :array
     {
@@ -39,10 +39,6 @@ class BlogPost extends Model
         static::creating(function ($post) {
             $post->created_by = Auth::guard('admin')->user()->id;
         });
-
-        static::saved(fn()=>Cache::forget('blog_posts'));
-        static::saved(fn()=> Cache::forget('random3_blog_posts'));
-
     }
     public function scopePublished(Builder $builder): void
     {

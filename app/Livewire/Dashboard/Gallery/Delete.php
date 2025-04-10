@@ -22,7 +22,7 @@ class Delete extends Component
 
         $this->dispatch('deleteModalToggle');
         $this->dispatch('notify_success', "Image Deleted Successfully");
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
     }
     public function render(): View
     {

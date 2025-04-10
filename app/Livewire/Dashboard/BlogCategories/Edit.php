@@ -31,7 +31,7 @@ class Edit extends Component
         $this->blogCategory->update($data);
 
         $this->dispatch('editModalToggle');
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
         $this->dispatch('notify_success', "Blog-Category Updated Successfully");
         $this->reset();
     }

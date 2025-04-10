@@ -138,7 +138,7 @@ final class Index extends PowerGridComponent
             $contact->is_read = "1";
             $contact->save();
         }
-        $this->dispatch('refreshData')->to(Index::class);
+        $this->dispatch('refreshData')->to(index::class);
     }
 
     public function actions(Contact $row): array
