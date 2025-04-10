@@ -8,7 +8,7 @@
             @foreach($testimonials as $testimonial)
                 <div class="testimonials-item">
                     <i class="flaticon-left-quote text-color"></i>
-                    <p>
+                    <p style="height: 200px; overflow-y: auto;">
                         {{$testimonial->message}}
                     </p>
                     <ul>
