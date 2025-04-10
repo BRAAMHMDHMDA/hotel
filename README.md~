@@ -4,13 +4,21 @@
     </a>
 </p>
 
-> **Free Hosting Notice**: This app is hosted on a free service. Therefore, some issues and slowdowns may occur due to the limitations and weaknesses of free hosting.  
+## Hosting Note
+<<<<<<< HEAD
+> **Free Hosting Notice**: This app is hosted on a free service, which may cause some issues and slowdowns due to its limitations. For an optimized experience, consider supporting us to upgrade to premium hosting!  
+=======
+> **Free Hosting Notice**: This app is hosted on a free service. Therefore, some issues and slowdowns may occur due to the limitations and weaknesses of free hosting.
+>>>>>>> 619f18848a4d348ed2851f20a0ff78c8645aa709
 > **Live Preview**: [http://netflixify.byethost5.com](http://netflixify.byethost5.com)
 
-> **Note**: An Arabic description is available below the English version.
+> **Note**: يتوفر وصف باللغة العربية أسفل النسخة الإنجليزية (An Arabic description is available below the English version).
 
 # ATOLI Hotel App
 ATOLI Hotel App is a comprehensive solution that simplifies hotel bookings for guests and equips staff with advanced management tools. Its intuitive design and robust features deliver an outstanding experience for both customers and hotel operators.
+
+### Why ATOLI?
+ATOLI stands out with its seamless integration of guest convenience and hotel efficiency, offering a modern, reliable, and scalable solution for today’s hospitality needs.
 
 ---
 
@@ -55,12 +63,49 @@ The ATOLI Control Panel provides administrators with powerful tools for efficien
 - **App Settings**: Customize social links, contact details, and map location.
 - **Real-Time Alerts**: Receive instant notifications for new bookings.
 
+---
+
+## Tools and Technologies
+<<<<<<< HEAD
+ATOLI is built with cutting-edge tools for optimal performance:
+
+- **Front-End**: HTML, CSS, and Bootstrap for responsive design; Livewire for dynamic SPA, real-time interfaces.
+- **Back-End**: Php Laravel for robust, secure server-side logic.
+- **Database**: MySQL for efficient data management.
+- **Real-Time Features**: Pusher for instant updates and notifications.
+- **Payment Gateway**: Stripe for secure and seamless transactions.
+
+---
+
+## Future Features
+We’re committed to enhancing ATOLI with:
+
+- Multi-language support for global accessibility.
+- AI-powered room recommendations.
+- Integration with third-party travel platforms.
+- Additional payment gateways to provide more flexibility and convenience for users.
+  =======
+  ATOLI Hotel App is built using modern tools and programming languages to ensure performance and scalability:
+
+- **Front-End**: HTML, CSS, Bootstrap, Livewire
+- **Back-End**: PHP, Laravel
+- **Database**: MySQL
+- **Real-Time Features**: Pusher
+- **Payment Gateway**: Stripe
+>>>>>>> 619f18848a4d348ed2851f20a0ff78c8645aa709
+
 ATOLI Hotel App merges seamless guest booking with advanced management tools, making it the perfect choice for modern hospitality.
+
+### Contact Us
+For inquiries or feedback, reach out at: [dev.bhmda@gmail.com](mailto:dev.bhmda@gmail.com)
 
 ---
 
 # تطبيق فندق ATOLI
 تطبيق ATOLI هو حل شامل يسهل حجوزات النزلاء ويزود فريق الفندق بأدوات إدارية متطورة. بفضل تصميمه البديهي وميزاته القوية، يقدم تجربة متميزة للعملاء ومشغلي الفنادق.
+
+### لماذا ATOLI؟
+يتميز ATOLI بتكامله السلس بين راحة النزلاء وكفاءة إدارة الفندق، مقدمًا حلًا حديثًا وموثوقًا وقابلًا للتطوير لتلبية احتياجات الضيافة اليوم.
 
 ---
 
@@ -105,4 +150,38 @@ ATOLI Hotel App merges seamless guest booking with advanced management tools, ma
 - **إعدادات التطبيق**: تخصيص الروابط الاجتماعية وتفاصيل التواصل والموقع.
 - **تنبيهات فورية**: إشعارات لحظية للحجوزات الجديدة.
 
+---
+
+## الأدوات والتقنيات
+<<<<<<< HEAD
+تم تطوير ATOLI باستخدام أدوات متطورة لتحقيق أداء مثالي:
+
+- **واجهة المستخدم**: HTML، CSS، وBootstrap لتصميم متجاوب؛ Livewire لواجهات ديناميكية فورية.
+- **الخلفية**: PHP Laravel لمنطق خادم قوي وآمن.
+- **قاعدة البيانات**: MySQL لإدارة البيانات بكفاءة.
+- **الميزات الفورية**: Pusher لتحديثات وإشعارات لحظية.
+- **بوابة الدفع**: Stripe لمعاملات آمنة وسلسة.
+
+---
+
+## المميزات المستقبلية
+نحن ملتزمون بتطوير ATOLI بإضافة:
+
+- دعم متعدد اللغات للوصول العالمي.
+- توصيات ذكية للغرف باستخدام الذكاء الاصطناعي.
+- التكامل مع منصات سفر خارجية.
+- المزيد من بوابات الدفع لتوفير مرونة أكبر وراحة للمستخدمين.
+  =======
+  تم بناء تطبيق ATOLI باستخدام أدوات وتقنيات حديثة لضمان الأداء والتوسع:
+
+- **واجهة المستخدم**: HTML، CSS، Bootstrap، Livewire
+- **الخلفية**: PHP، Laravel
+- **قاعدة البيانات**: MySQL
+- **الميزات الفورية**: Pusher
+- **بوابة الدفع**: Stripe
+>>>>>>> 619f18848a4d348ed2851f20a0ff78c8645aa709
+
 تطبيق ATOLI يجمع بين تجربة حجز سهلة للنزلاء وأدوات إدارية متطورة، مما يجعله الخيار المثالي للفنادق العصرية.
+
+### تواصلوا معنا
+للاستفسارات أو التعليقات، تواصلوا عبر: [dev.bhmda@gmail.com](mailto:dev.bhmda@gmail.com)
