@@ -8,6 +8,7 @@
 > **Live Preview**: [http://netflixify.byethost5.com](http://netflixify.byethost5.com)
 
 > **Note**: An Arabic description is available below the English version.
+> **ملاحظة**: يتوفر وصف باللغة العربية أسفل النسخة الإنجليزية.
 
 # ATOLI Hotel App
 ATOLI Hotel App is a comprehensive solution that simplifies hotel bookings for guests and equips staff with advanced management tools. Its intuitive design and robust features deliver an outstanding experience for both customers and hotel operators.
