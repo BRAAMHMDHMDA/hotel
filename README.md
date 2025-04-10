@@ -1,66 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="http://netflixify.byethost5.com" target="_blank">
+        <img src="http://netflixify.byethost5.com/storage/media/settings/app.logo-name.png" width="400" alt="ATOLI Hotel App Logo">
+    </a>
 </p>
 
-## About Laravel
+> **Free Hosting Notice**: This app is hosted on a free service. Therefore, some issues and slowdowns may occur due to the limitations and weaknesses of free hosting.  
+> **Live Preview**: [http://netflixify.byethost5.com](http://netflixify.byethost5.com)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> **Note**: An Arabic description is available below the English version.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# ATOLI Hotel App
+ATOLI Hotel App is a comprehensive solution that simplifies hotel bookings for guests and equips staff with advanced management tools. Its intuitive design and robust features deliver an outstanding experience for both customers and hotel operators.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## The Application
+The ATOLI Hotel App offers a seamless booking experience with the following features:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Room Availability**: Check room availability for specific dates.
+- **Room Details**: View rooms with photos and detailed descriptions.
+- **Booking**: Reserve your preferred room effortlessly.
+- **Payment Options**: Pay securely online via Stripe or in cash.
+- **Reservation Management**: Track, edit, or cancel unconfirmed bookings.
+- **Profile Updates**: Update personal details with ease.
+- **Hotel Information**: Explore comprehensive hotel details and amenities.
+- **Customer Reviews**: Read feedback from past guests.
+- **Staff Directory**: Meet the hotel team and find contact details.
+- **Photo Studio**: Browse a gallery of stunning hotel images.
+- **Interactive Blog**: Access articles with categories, comments, and search functionality.
+- **Direct Communication**: Message hotel management directly.
+- **FAQs**: Find answers to common questions.
+- **Contact Options**: Multiple ways to reach the hotel.
+- **Map Location**: Locate the hotel on an interactive map.
+- **User Experience**: Enjoy a responsive SPA interface with dark mode support.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## The Control Panel
+The ATOLI Control Panel provides administrators with powerful tools for efficient hotel management:
 
-## Laravel Sponsors
+- **Secure Login**: Restricted access for authorized users.
+- **Dashboard**: View booking stats, revenue, growth trends, and top rooms via charts.
+- **Room Management**:
+    - Manage room types and details.
+    - Control individual room assignments.
+- **Booking Oversight**: Filter, edit, and download reservation invoices.
+- **Blog Management**: Administer articles, categories, and comments.
+- **Content Customization**: Update the homepage and FAQs.
+- **Staff Management**: Edit team details and contact info.
+- **Review Oversight**: Manage guest feedback.
+- **Photo Studio**: Curate the hotel’s image gallery.
+- **Messages**: Review and delete customer messages.
+- **User Roles**: Define permissions and roles for admin users.
+- **App Settings**: Customize social links, contact details, and map location.
+- **Real-Time Alerts**: Receive instant notifications for new bookings.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+ATOLI Hotel App merges seamless guest booking with advanced management tools, making it the perfect choice for modern hospitality.
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+# تطبيق فندق ATOLI
+تطبيق ATOLI هو حل شامل يسهل حجوزات النزلاء ويزود فريق الفندق بأدوات إدارية متطورة. بفضل تصميمه البديهي وميزاته القوية، يقدم تجربة متميزة للعملاء ومشغلي الفنادق.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## التطبيق
+يوفر تطبيق ATOLI تجربة حجز سلسة تشمل:
 
-## Code of Conduct
+- **فحص التوفر**: التحقق من الغرف المتاحة لتواريخ محددة.
+- **تفاصيل الغرف**: عرض الغرف مع صور ومعلومات تفصيلية.
+- **الحجز**: حجز الغرفة المفضلة بسهولة.
+- **خيارات الدفع**: دفع آمن أونلاين عبر Stripe أو نقدًا.
+- **إدارة الحجوزات**: متابعة أو تعديل أو إلغاء الحجوزات غير المؤكدة.
+- **تحديث البيانات**: تعديل المعلومات الشخصية بسهولة.
+- **معلومات الفندق**: استكشاف تفاصيل الفندق ومرافقه.
+- **آراء العملاء**: قراءة تعليقات النزلاء السابقين.
+- **فريق العمل**: التعرف على طاقم الفندق وتفاصيل التواصل.
+- **استوديو الصور**: تصفح معرض صور الفندق المذهل.
+- **مدونة تفاعلية**: الوصول إلى مقالات مع تصنيفات وتعليقات وبحث سريع.
+- **التواصل المباشر**: مراسلة إدارة الفندق مباشرة.
+- **الأسئلة الشائعة**: إجابات عن الأسئلة المتكررة.
+- **وسائل الاتصال**: خيارات تواصل متعددة.
+- **الموقع على الخريطة**: تحديد موقع الفندق بدقة.
+- **تجربة مستخدم**: واجهة SPA متجاوبة مع دعم الوضع الداكن.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## لوحة التحكم
+توفر لوحة تحكم ATOLI أدوات قوية لإدارة الفندق بكفاءة:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **تسجيل الدخول**: وصول آمن للمستخدمين المصرح لهم.
+- **لوحة المعلومات**: عرض إحصائيات الحجوزات والإيرادات واتجاهات النمو والغرف الأكثر طلبًا.
+- **إدارة الغرف**:
+    - التحكم في أنواع الغرف وتفاصيلها.
+    - إدارة تخصيص الغرف الفردية.
+- **إدارة الحجوزات**: فلترة وتعديل الحجوزات وتحميل الفواتير.
+- **إدارة المدونة**: التحكم في المقالات والتصنيفات والتعليقات.
+- **تخصيص المحتوى**: تحديث الصفحة الرئيسية والأسئلة الشائعة.
+- **إدارة الفريق**: تعديل بيانات الطاقم ومعلومات التواصل.
+- **مراجعة التقييمات**: إدارة تعليقات النزلاء.
+- **استوديو الصور**: تنظيم معرض صور الفندق.
+- **الرسائل**: عرض وحذف رسائل العملاء.
+- **أدوار المستخدمين**: تحديد الصلاحيات والأدوار.
+- **إعدادات التطبيق**: تخصيص الروابط الاجتماعية وتفاصيل التواصل والموقع.
+- **تنبيهات فورية**: إشعارات لحظية للحجوزات الجديدة.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+تطبيق ATOLI يجمع بين تجربة حجز سهلة للنزلاء وأدوات إدارية متطورة، مما يجعله الخيار المثالي للفنادق العصرية.
