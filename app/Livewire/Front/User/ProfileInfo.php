@@ -38,7 +38,7 @@ class ProfileInfo extends Component
     public function submit()
     {
         $data = $this->validate();
-        $data = User::UpdateImage($data, $this->old_image);
+        $data = User::updateImage($data, $this->old_image);
         $res = Auth::user()->update($data);
         $this->resetValidation();
     }

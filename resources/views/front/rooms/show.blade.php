@@ -75,7 +75,7 @@
 
                 <div class="col-lg-8">
                     <div class="room-details-article">
-                        <div class="room-details-slider owl-carousel owl-theme">
+                        <div class="room-details-slider owl-carousel owl-theme" wire:ignore>
 {{--                            <div class="room-details-item">--}}
 {{--                                <img src="{{ $room_type->image_url }}" alt="Images">--}}
 {{--                            </div>--}}

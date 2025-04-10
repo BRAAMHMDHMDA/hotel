@@ -25,7 +25,7 @@ class Create extends Component
         $data= $this->validate();
         Room::create($data);
 
-        $this->dispatch('refreshData')->to(index::class);
+        $this->dispatch('refreshData')->to(Index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "(Room $this->number) Created Successfully");
     }

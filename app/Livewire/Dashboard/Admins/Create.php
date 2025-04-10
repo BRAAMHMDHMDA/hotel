@@ -28,7 +28,7 @@ class Create extends Component
         $admin = Admin::create(Admin::storeImage($data));
         $admin->assignRole($this->selectedRoles); // Assign roles (array or single role)
 
-        $this->dispatch('refreshData')->to(index::class);
+        $this->dispatch('refreshData')->to(Index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "$this->name (Admin) Created Successfully");
         $this->resetExcept(['roles']);

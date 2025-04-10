@@ -22,6 +22,8 @@ use \App\Livewire\Dashboard\{
     ManageAreas\QuickBooking,
     ManageAreas\FrequentQuestions,
 
+    Home\Index as Home,
+
 };
 
 
@@ -47,8 +49,8 @@ Route::group([
 ], function (){
 
     //================= Home Route=================
-    Route::view('home', 'dashboard.index')->name('home');
-    Route::redirect('/', '/dashboard/home');
+    Route::get('home', Home::class)->name('home');
+    Route::redirect('/', 'dashboard/home');
 
     //================= Team Management Route=================
     Route::view('team', 'dashboard.team.index')->name('team')->middleware('permission:team-list');

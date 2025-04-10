@@ -92,7 +92,7 @@ class Edit extends Component
 
     public function downloadInvoice(): \Symfony\Component\HttpFoundation\StreamedResponse
     {
-        return BookingInvoice::Download($this->booking);
+        return BookingInvoice::download($this->booking);
     }
 
     public function render()

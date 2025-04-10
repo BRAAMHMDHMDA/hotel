@@ -33,7 +33,7 @@ class Create extends Component
             Gallery::create(['image_path' => $image_path]);
         }
 
-        $this->dispatch('refreshData')->to(index::class);
+        $this->dispatch('refreshData')->to(Index::class);
         $this->dispatch('createModalToggle');
         $this->dispatch('notify_success', "Images Saved Successfully");
         $this->reset();
