@@ -1,12 +1,12 @@
 <p align="center">
-    <a href="http://netflixify.byethost5.com" target="_blank">
-        <img src="http://netflixify.byethost5.com/storage/media/settings/app.logo-name.png" width="400" alt="ATOLI Hotel App Logo">
+    <a href="https://atoli-hotel.onrender.com" target="_blank">
+        <img src="https://atoli-hotel.onrender.com/storage/media/settings/app.logo-name.png" width="400" alt="ATOLI Hotel App Logo">
     </a>
 </p>
 
 ## Hosting Note
 > **Free Hosting Notice**: This app is hosted on a free service, which may cause some issues and slowdowns due to its limitations. For an optimized experience, consider supporting us to upgrade to premium hosting!  
-> **Live Preview**: [http://netflixify.byethost5.com](http://netflixify.byethost5.com)
+> **Live Preview**: [https://atoli-hotel.onrender.com/](https://atoli-hotel.onrender.com/)
 
 > **Note**: يتوفر وصف باللغة العربية أسفل النسخة الإنجليزية (An Arabic description is available below the English version).
 
