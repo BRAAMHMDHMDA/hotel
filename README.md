@@ -6,7 +6,7 @@
 
 ## Hosting Note
 > **Free Hosting Notice**: This app is hosted on a free service, which may cause some issues and slowdowns due to its limitations. For an optimized experience, consider supporting us to upgrade to premium hosting!  
-> **Live Preview**: [https://atoli-hotel.onrender.com/](https://atoli-hotel.onrender.com/)
+> **Live Preview**: [Atoli Hotel App](https://atoli-hotel.onrender.com/) [Atoli Hotel Dashboard](https://atoli-hotel.onrender.com/dashboard) 
 
 > **Note**: يتوفر وصف باللغة العربية أسفل النسخة الإنجليزية (An Arabic description is available below the English version).
 
